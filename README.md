@@ -16,7 +16,7 @@
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key:true|
+|user|references|null: false,foreign_key:true|
 |customer_id|string|null: false|
 ### Association
 - belongs_to :user
@@ -24,7 +24,7 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key:true|
+|user|references|null: false,foreign_key:true|
 |familyname|string|null: false|
 |firstname|string|null: false|
 |familyname_kana|string|null: false|
@@ -43,8 +43,8 @@
 ## buyersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key:true|
-|items_id|references|null: false,foreign_key:true|
+|user|references|null: false,foreign_key:true|
+|items|references|null: false,foreign_key:true|
 ### Association
 - belongs_to :user
 - belongs_to :item
@@ -53,32 +53,32 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key:true|
-|item_name|string|null: false|
-|item_text|text|null: false|
+|user|references|null: false,foreign_key:true|
+|name|string|null: false|
+|text|text|null: false|
 |status|string|null: false|
 |burden|string|null: false|
 |area|string|null: false|
 |days_to_ship|integer|null: false|
 |selling_price|integer|null: false|
-|category_id|references|null: false,foreign_key:true|
+|category|references|null: false,foreign_key:true|
 ### Association
 - has_many :images
 - has_one :buyer
-- belongs_to :categorie
+- belongs_to :category
 - belongs_to :user
 ### add_index
 - add_index :item_name
 
 
 ## imagesテーブル
-|item_id|references|null: false,foreign_key:true|
+|item|references|null: false,foreign_key:true|
 |image|string|null: false|
 ### Association
 - belongs_to :item
 
 ## categories
-|categorie_name|string|null: false|
+|name|string|null: false|
 |ancestry|string||
 ### Association
 - has_many :items
