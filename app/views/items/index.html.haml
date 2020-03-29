@@ -19,14 +19,18 @@
       新規登録
       ログイン
 .main1
-  /ここだけclass名少し変えているが合ってます？↓
+  /ここclass名少し変えているが合ってます？↓
   .main1__page
     .main1__title
       %h1 人生を変えるフリマアプリ
     .main1__subtitle
-      %p FURIMAはだれでもかんたんに出品・購入できるフリマアプリです
-    .main1__apple
-    .main1__google
+      %p FURIMAはだれでもかんたんに出品・購入できる
+      %p フリマアプリです
+    .main1__btn
+      .main1__btn--apple
+        = image_tag('/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg',size: '180x53')
+      .main1__btn--google
+        = image_tag('/assets/google-play-badge.png',size: '200x73')
 .main2
   .main2__page
     .main2__heading
@@ -132,7 +136,10 @@
       %h4 だれでもかんたん、人生を変えるフリマアプリ
     .main6__subtitle
       %p 今すぐ無料ダウンロード！
-    .main6__apple
-    .main6__google
+    .main6__btn
+      .main6__btn--apple
+        = image_tag('/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg',size: '180x53')
+      .main6__btn--google
+        = image_tag('/assets/google-play-badge.png',size: '200x73')
 
 .footer
