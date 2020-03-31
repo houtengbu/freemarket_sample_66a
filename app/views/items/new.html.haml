@@ -16,10 +16,10 @@
       .item-image-title-box
         .item-image-title-box-input
           .item-image-title-box-input-1
-            = icon("fas", "fas fa-camera")
+            = fa_icon "camera"
           .item-image-title-box-input-2
             ドッラクアンドドロップ
-          .item-image-title-box-input-3
+          .item-image-title-box-input-2
             またはクリックしてファイルをアップロード
                     
               
@@ -43,7 +43,7 @@
             %li.item-name-title-b-text-body-2
               必須
         %form.item-name-title-b-field
-          %textarea.item-name-title-b-field-text{name: "comment", cols: "60", rows: "7", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)       例）2010年頃には一万円で購入したジャケットです。ライトグレーではありません。あわせやすいのでお勧めです。"}
+          %textarea.item-name-title-b-field-text{name: "comment", cols: "60", rows: "7", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)                      例）2010年頃には一万円で購入したジャケットです。ライトグレーではありません。あわせやすいのでお勧めです。"}
 
   .item-detail
     .item-detail-title
@@ -88,13 +88,15 @@
             傷や汚れあり
           %option{value: "7"}
             全体的に状態が悪い
+
+      
             
             
 
   .item-delivery
     .item-delivery-title
       .item-delivery-title-text
-        配送について
+        配送について 
       .item-delivery-title-body
         %ul.item-delivery-title-body-text
           %li.item-delivery-title-body-text-1
@@ -157,7 +159,9 @@
             販売価格
           %li.item-price-title-text-b-body-2
             必須
-        %input.item-price-title-b-field{type: "text", name: "price", placeholder: "0"}
+          %li.item-price-title-text-b-body-3
+            ¥
+        %input.item-price-title-b-field{type: "number", name: "price", placeholder: "0"}
           
   .item-profit
     .item-profit-title
@@ -179,9 +183,7 @@
 
       .item-profit-title-body
         %br.item-profit-body-1
-          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律に
-        %br.item-profit-body-2
-          より処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規       約に同意したことになります。
 
 .footer
   %ul.footer-text
@@ -192,4 +194,4 @@
     %li.footer-text-c
       特定商取引に関する表記
   .footer-logo
-    = icon("fas", "cart-arrow-down")
+    

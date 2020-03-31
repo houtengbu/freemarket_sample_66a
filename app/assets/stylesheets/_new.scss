@@ -1,24 +1,25 @@
 .header {
   background-color: #EEEEEE;
-  width: 100%;
-  height: 150px;
+  width: 1440px;
+  height: 128px;
   text-align: center;
    &-body-logo{
-     height: 130px;
-     width: 250px;
+     margin-top: 30px;
+     height: 49px;
+     width: 185px;
      
    }
 }
 
 .item{
   background-color: #EEEEEE;
-  width: 100%;
-  height: 2075px;
+  width: 1440px;
+  height: 2328px;
  
    &-image{
      background-color: white;
-     width: 75%;
-     height: 350px;
+     width: 700px;
+     height: 300px;
      display: block;
      margin-left: auto;
      margin-right: auto;
@@ -26,28 +27,39 @@
         padding-left: 30px;
         padding-top: 20px;
          &-body-name{
+           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
            display: flex;
+           font-size: 14px;
             &-b{
               margin-left: 20px;
               background-color: red;
               color: white;
+
          }
         }
 
          &-text{
            margin-top: 10px;
-           font-family: Arial;
+           font-size: 14px;
+           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
          }
 
          &-box{
            text-align: center;
-           margin-top: 20px;
+           margin-top: 10px;
+
             &-input{
-              
-              margin: auto;
-              width: 500px;
+              font-size: 14px;
+              margin: 0 auto;
+              padding-top: 40px;
+              width: 95%;
               height: 150px;
               background-color: #f5f5f5;
+              border-style: dotted;
+              border-color: gray;
+               &-1{
+                 
+               }
 
             }
          }
@@ -57,8 +69,8 @@
 
    &-name{
      background-color: white;
-     width: 75%;
-     height: 400px;
+     width: 700px;
+     height: 416px;
      margin-top: 5px;
      display: block;
      margin-left: auto;
@@ -70,6 +82,8 @@
 
          &-a-text-body{
            display: flex;
+           font-size: 14px;
+           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
             &-1{
 
             }
@@ -86,11 +100,17 @@
         
             &-text{
               margin-top: 20px;
-              width: 500px;
+              width: 620px;
+              height: 48px;
+              border-radius: 10px;
            }
+
+
       }
          &-b-text-body{
            margin-top: 20px;
+           font-size: 14px;
+           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
            display: flex;
             &-1{
 
@@ -108,7 +128,9 @@
 
             &-text{
               margin-top: 20px;
-              width: 500px;
+              width: 620px;
+              height: 154px;
+              border-radius: 10px;
             }
        }
 
@@ -117,8 +139,8 @@
 
    &-detail{
      background-color: white;
-     width: 75%;
-     height: 300px;
+     width: 700px;
+     height: 444px;
      margin-top: 5px;
      display: block;
      margin-left: auto;
@@ -126,9 +148,15 @@
       &-title{
        padding-left: 30px;
        padding-top: 20px;
+        &-text{
+          color: #888888;
+        }
+
         &-body-a-text{
           display: flex;
           margin-top: 20px;
+          font-size: 14px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
            &-2{
             margin-left: 10px;
             background-color: red;
@@ -139,7 +167,8 @@
 
         &-body-a-field{
           margin-top: 20px;
-          width: 300px;
+          width: 620px;
+          height: 48px;
         }
 
         
@@ -147,8 +176,8 @@
   }
    &-delivery{
      background-color: white;
-     width: 75%;
-     height: 400px;
+     width: 700px;
+     height: 444px;
      margin-top: 5px;
      display: block;
      margin-left: auto;
@@ -156,8 +185,14 @@
       &-title{
        padding-left: 30px;
        padding-top: 20px;
+        &-text{
+          color: #888888;
+        }
+
         &-body-text{
           display: flex;
+          font-size: 14px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
           margin-top: 20px;
            &-2{
             margin-left: 10px;
@@ -169,14 +204,15 @@
 
         &-body-field{
           margin-top: 20px;
-          width: 300px;
+          width: 620px;
+          height: 48px;
         }
      }
     }
   
    &-price{
      background-color: white;
-     width: 75%;
+     width: 700px;
      height: 150px;
      margin-top: 5px;
      display: block;
@@ -185,22 +221,30 @@
       &-title{
         padding-left: 30px;
         padding-top: 20px;
+         &-text-a{
+           color: #888888;
+         }
+
          &-text-b{
+           
            display: flex;
            justify-content: space-between;
            margin-top: 20px; 
-           margin-left: 20px;
+           margin-right: 20px;
             &-body{
               display: flex;
                &-2{
                  background-color: red ;
                  color: white;
-                 margin-left: 20px;
+                 margin-right: 20px;
               }
+               &-3{
+                 margin-left: 320px;
+               }
             }
             
             &-field{
-              margin-right: 20px;
+              margin-right: 40px;
             }
     
           }
@@ -209,8 +253,8 @@
 
    &-profit{
      background-color: white;
-     width: 75%;
-     height: 400px;
+     width: 700px;
+     height: 402px;
      display: block;
      margin-left: auto;
      margin-right: auto;
@@ -228,6 +272,7 @@
           font-family: Arial;
         }
          &-input{
+           margin-top: 30px;
            text-align: center;
          
           &-1-field{
@@ -252,8 +297,12 @@
            }
 
           &-body{
-            font-size: 12px;
+            font-size: 10px;
             font-family: Arial;
+            text-align: center;
+             &-2{
+               margin-top: opx;
+             }
           }
 
         }
@@ -264,8 +313,8 @@
 
 .footer{
   background-color: #EEEEEE;
-  width: 100%;
-  height: 100px;
+  width: 700px;
+  height: 220px;
   text-align: center;
    &-text{
      display: flex;
