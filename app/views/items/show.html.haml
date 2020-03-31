@@ -1,38 +1,89 @@
+/routesをindexに変える
 .header
-  .header-logo
-    %i.fas.fa-cart-plus
-  .header-text
-    %p mercari
-
-.item
-  .item-image
-    .item-image-form
-      .item-image-name
-        %lavel
-          出品画像
-        %span
-          必須
-      .item-image-text
-        %p
-          最大10枚までアップロードできます。
-      .item-image-upload
-        .item-image-upload-sell-a
-          %date-test ="sell-upload-container"
-          .item-image-upload-sell-b
-            - tabindex="0"
-            .item-image-upload-sell-c
-              %input{type: "file", accept: "", multiplestyle: ""}
-              
-      
-  .item-name  
-    %ul
+  .header-main
+    %li.header-main__logo
+      %a{href: "#"}
+        %img{src: "assets/logo.png", alt: "ロゴ",class: "rogo"}
+      .header-main__logo__form
+        .header-main__logo__form-text
+          %input{type: "text", name: "search", placeholder: "キーワードから探す", class: "search"}
+        .header-main__logo__form-btn
+          %a{href: "#"}
+            %input{type: "submit", name: "submit", value: "検索", class: "submit"}
+              %img{src: "assets/icon-search 1.png", alt: "検索マーク", class: "submit-logo"}
+    .header-main__logo__form__nav
+      %a{href: "#", class: "nav"} カテゴリー
       %li
-      
+        %a{href: "#", class: "login"} ログイン
+        %a{href: "#", class: "new"} 新規会員登録
 
-  .item-detail
+.item-detail
+  .item-detail__top
+    .item-detail__top__box
+      .item-detail__top__box__item-name 
+        item
+      .item-detail__top__box__item-image
+        %img{src: "https://illustphoto.com/matome/photo/8.jpg", alt: "トマトの画像", class:"image-main"}
+          %li.item-detail__top__box__item-image-sub
+            %img{src: "https://illustphoto.com/matome/photo/8.jpg", alt: "トマトの画像",class:"image-sub"}
+            %img{src: "https://s.eximg.jp/exnews/feed/Jtownnet/Jtownnet_296218_55f4_1.jpg", alt: "卵の画像", class:"image-sub"}
+            %img{src: "https://u.jimcdn.com/cms/o/se72ae6ce04bbc344/emotion/crop/header.jpg?t=1467183978", alt: "さくらんぼの画像",class:"image-sub"}
+      .item-detail__top__box__item-price-box   
+        .item-detail__top__box__item-price
+          ¥3000
+          .item-detail__top__box__item-price-detail
+            (税込) 送料込み
+      .item-detail__top__box__item-text-box
+        .item-detail__top__box__item-text
+          とても美味しくとろけるような甘さ。。。
+          農薬など一切使用しておらず体に害はなく
+          皮まで食べられる桃になっております。
+          今ならなんと３個セットでセール中です！
+          ぜひこの機会にお試し下さい。
+      .item-detail__table
+        %table
+          %tbody
+            %tr
+              %th 出品者
+              %td hoge
+            %tr
+              %th カテゴリー
+              %td
+                %a{href: "#",class:"category"} その他
+                %br/
+                %a{href: "#",class:"category"} 食品
+                %br/
+                %a{href: "#",class:"category"} 果物
+            %tr
+              %th 商品の状態
+              %td 新品/未使用
+            %tr
+              %th 配送料の負担
+              %td 送料込み（出品者負担）
+            %tr
+              %th 発送元の地域
+              %td 
+                %a{href: "#",class:"area"} 東京都
+            %tr
+              %th 発送日の目安
+              %td 2~4日で発送
 
-  .item-delivery
-
-  .item-price
-
+      .item-detail__nav
+        %li
+          %a{href: "#",class:"nav"} < 前の商品
+          %a{href: "#",class:"nav-next"} 後ろの商品 >
+      .item-detail__more-navi
+        %a{href: "#"} その他をもっと見る
+  .link
+    %link{href: "_show.scss", rel: "stylesheet", type: "scss"}
+    .link-text
+      %h2 だれでもかんたん、人生を変えるフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .link-icon
+        %a{href: "#"}
+          %img{src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", alt: "アップルストアへのリンク", class:"icon"}
+        %a{href: "#"}
+          %img{src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", alt: "グーグルへのリンク", class:"icon"}
 .footer
+                
+            
