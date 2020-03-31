@@ -14,7 +14,7 @@
 .item{
   background-color: #EEEEEE;
   width: 1440px;
-  height: 2328px;
+  height: 2128px;
  
    &-image{
      background-color: white;
@@ -311,12 +311,47 @@
    }
  }
 
-.footer{
-  background-color: #EEEEEE;
-  width: 700px;
+
+.footer {
+  width: 1440px;
   height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
   text-align: center;
-   &-text{
-     display: flex;
-   }
+  background-color: #EEEEEE;
+
+  &__menu {
+    height: 15px;
+    font-size: 12px;
+    color: #333333;
+
+    &--privacy {
+      color: #333333;
+    }
+
+    &--terms {
+      color: #333333;
+      margin-left: 16px;
+    }
+
+    &--notation {
+      color: #333333;
+      margin-left: 16px;
+    }
+  }
+
+  &__mark {
+    margin: 40px auto 0;
+    
+    &--logo {
+      width: 100px;
+      height: 60px;
+    } 
+  }
+
+  &__name {
+    font-size: 13px;
+    color: #333333;
+    margin-left: 6px;
+  }
 }

@@ -1,6 +1,5 @@
 .header
-  %body.header-body
-    %img.header-body-logo{src: "assets/logo-white.png", alt: "ロゴ"}
+  = link_to image_tag(src= "furima-logo.svg", class: "buy-header__logo"),"/"
 
 .item
   .item-image
@@ -186,12 +185,13 @@
           禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規       約に同意したことになります。
 
 .footer
-  %ul.footer-text
-    %li.footer-text-a
-      プライバシーポリシー
-    %li.footer-text-b
-      メルカリ利用規約
-    %li.footer-text-c
-      特定商取引に関する表記
-  .footer-logo
+  .footer__menu
+    = link_to "プライバシーポリシー","#", class:"footer__menu--privacy"
+    = link_to "メルカリ利用規約","#", class:"footer__menu--terms"
+    = link_to "特定商取引に関する表記","#", class:"footer__menu--notation"
+
+  .footer__mark  
+    = link_to image_tag(src= "furima-logo.svg", class: "footer__mark--logo"),"/"
+  .buy-fotter__name
+    © FURIMA, Inc.
     
