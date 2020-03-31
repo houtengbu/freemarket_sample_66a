@@ -85,55 +85,59 @@
     
     &__box {
       background-color: white;
-      width: 700px;
+      width: 750px;
       margin: 30px;
       margin-bottom: 5px;
     }
-    &__box__item-name {
-      font-size: 25px;
-      line-height: 1.4em;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px;
-    }
-    &__box__item-image{
-      text-align: center;
-      
-    }
-    .image-main {
-      width: 600px;
-    }
-    &__box__item-image-sub {
-      list-style: none;
-    }
-      .image-sub {
-        width: 160px;
-        height: 110px;
-        
-      }
-    &__box__item-price-box {
-      margin: 30px;
-    }
-      &__box__item-price {
-        text-align: center;
-        font-size: 50px;
+      &__box__item-name {
+        font-size: 25px;
+        line-height: 1.3em;
         font-weight: bold;
+        text-align: center;
+        padding: 18px;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
-        &__box__item-price-detail {
+      &__box__item-image{
+        text-align: center;
+        .image-main {
+          width: 600px;
+        }
+      }
+        &__box__item-image-sub {
+          list-style: none;
+          .image-sub {
+            width: 160px;
+            height: 110px;
+          }
+        }
+      &__box__item-price {
+        margin: 20px;
+      
+        &-box {
+          text-align: center;
+          font-size: 50px;
+          font-weight: bold;
+          padding-bottom: 15px;
+          font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+        }
+        &-detail {
           text-align: center;
           line-height: 0.2em;
-          font-size: 18px;
-          font-weight: 150;
+          font-size: 17px;
+          font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
         }
-      &__box__item-text-box {
-        text-align: center;
-        font-family: sans-serif;
       }
-        &__box__item-text {
+      &__box__item-text {
+        text-align: center;
+        
+      
+        &-box {
           text-align: left;
           font-size: 18px;
           margin: 40px;
+          font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
         }
+      }
       .item-detail__table {
         display: flex;
         justify-content: center;
@@ -178,7 +182,6 @@
         .nav {
           text-decoration: none;
           color: #1DC7D3;
-          
         }
         .nav-next {
           text-decoration: none;
@@ -197,7 +200,8 @@
           color: #1DC7D3;
         }
       }
-    }
+    
+  }
   .link {
     height: 400px;
     background-image: url(bg-appBanner-pict.png);
