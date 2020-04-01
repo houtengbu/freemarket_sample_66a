@@ -1,0 +1,53 @@
+.buy
+
+  .buy-header
+    = link_to image_tag(src= "furima-logo.svg", class: "buy-header__logo"),"/"
+
+  .buy-main
+    .buy-main__top
+      購入内容の確認
+
+    .buy-main__middle
+      = link_to image_tag(src= "/", class: "buy-main__middle-image")
+      .buy-main__middle-item
+        .buy-main__middle-item-name
+          バッグ
+        .buy-main__middle-item-price
+          .buy-main__middle-item-price-value
+            1,400円
+          .buy-main__middle-item-price-fee
+            （税込）送料込み
+      
+    .buy-main__bottom
+      .buy-main__bottom-form
+        .buy-main__bottom-form-pay
+          .buy-main__bottom-form-pay-name
+            支払い金額
+          .buy-main__bottom-form-pay-value
+            1,400円
+        .buy-main__bottom-form-pay-method
+          .buy-main__bottom-form-pay-method-info
+            支払い方法
+          .buy-main__bottom-form-pay-method-box
+            = fa_icon "plus-circle", class:"buy-main__bottom-form-pay-method-box--icon"
+            = link_to "登録して下さい","#", class:"buy-main__bottom-form-pay-method-box--entry"
+        .buy-main__bottom-form-address
+          .buy-main__bottom-form-address-info
+            配送先
+          .buy-main__bottom-form-address-box
+            = fa_icon "plus-circle", class: "buy-main__bottom-form-address-box--icon"
+            = link_to "登録して下さい","#", class:"buy-main__bottom-form-address-box--entry"
+
+        .buy-main__bottom-form-confirm
+          = submit_tag '購入する', class: 'buy-main__bottom-form-confirm-btm'
+
+  .buy-fotter
+    .buy-fotter__menu
+      = link_to "プライバシーポリシー","#", class:"buy-fotter__menu--privacy"
+      = link_to "メルカリ利用規約","#", class:"buy-fotter__menu--terms"
+      = link_to "特定商取引に関する表記","#", class:"buy-fotter__menu--notation"
+
+    .buy-fotter__mark  
+      = link_to image_tag(src= "furima-logo.svg", class: "buy-fotter__mark--logo"),"/"
+    .buy-fotter__name
+      © FURIMA, Inc.
