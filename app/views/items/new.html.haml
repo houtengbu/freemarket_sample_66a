@@ -31,8 +31,9 @@
               商品名
             %li.item-name-title-a-text-body-2
               必須
-        %form.item-name-title-a-field
-          %input.item-name-title-a-field-text{type: "text", name: "name", placeholder: "40字まで"}
+        .item-name-title-a-field
+          = form_with(model: @item) do |f|
+            = f.text_field :name, class: "item-name-title-a-field-text", placeholder: "40字まで"
             
       .item-name-title-b
         .item-name-title-b-text
@@ -41,8 +42,9 @@
               商品の説明
             %li.item-name-title-b-text-body-2
               必須
-        %form.item-name-title-b-field
-          %textarea.item-name-title-b-field-text{name: "comment", cols: "60", rows: "7", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)                      例）2010年頃には一万円で購入したジャケットです。ライトグレーではありません。あわせやすいのでお勧めです。"}
+        .item-name-title-b-field
+          = form_with(model: @item) do |f|
+            = f.text_area :comment, class: "item-name-title-b-field-text",  cols: "60", rows: "7", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)                      例）2010年頃には一万円で購入したジャケットです。ライトグレーではありません。あわせやすいのでお勧めです。"
 
   .item-detail
     .item-detail-title
@@ -54,43 +56,30 @@
             カテゴリー
           %li.item-detail-title-body-a-text-2
             必須
-        %select.item-detail-title-body-a-field
-          %option{value: "1", selected: "1"}
-            選択してください
-          %option{value: "2"}
-            メンズ
-          %option{value: "3"}
-            レディース
-          %option{value: "4"}
-            インテリア・小物・住まい
-          %option{value: "5"}
-            ベビー・キッズ
-            
+        .item-detail-title-body-a-field
+          = form_with(model: @item) do |f|
+            = f.select :category_id, [["選択してください", 1], ["メンズ", 2], ["レディース", 3], ["インテリア・小物・住まい", 4], ["ベビー・キッズ", 5]], { include_blank: true, selected: 1 }, { class: "item-detail-title-body-a-field-text"}
+      
+      .item-detail-title-body-b
+        %ul.item-detail-title-body-b-text
+          %li.item-detail-title-body-b-text-1
+            ブランド
+          %li.item-detail-title-body-b-text-2
+            任意
+        .item-detail-title-body-b-field
+          = form_with(model: @item) do |f|
+            = f.text_field :brnad, class: "item-detail-title-body-b-field-text", placeholder: "例) シャネル"
+
       .item-detail-title-body-a
         %ul.item-detail-title-body-a-text 
           %li.item-detail-title-body-a-text-1
             商品の状態
           %li.item-detail-title-body-a-text-2
             必須
-        %select.item-detail-title-body-a-field
-          %option{value: "1", selected: "1"}
-            選択してください
-          %option{value: "2"}
-            新品、未使用
-          %option{value: "3"}
-            未使用に近い
-          %option{value: "4"}
-            目立った傷や汚れなし
-          %option{value: "5"}
-            やや傷れや汚れあり
-          %option{value: "6"}
-            傷や汚れあり
-          %option{value: "7"}
-            全体的に状態が悪い
-
-      
-            
-            
+        .item-detail-title-body-a-field
+          = form_with(model: @item) do |f|
+            = f.select :status, [["選択してください", 1], ["新品、未使用", 2], ["未使用に近い", 3], ["目立った傷や汚れなし", 4], ["やや傷れや汚れあり", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7]], { include_blank: true, selected: 1 }, { class: "item-detail-title-body-a-field-text"}
+  
 
   .item-delivery
     .item-delivery-title
@@ -102,25 +91,9 @@
             配送量の負担
           %li.item-delivery-title-body-text-2
             必須
-        %select.item-delivery-title-body-field
-          %option{value: "1", selected: "1"}
-            選択してください
-          %option{value: "2"}
-            未定
-          %option{value: "3"}
-            ゆうメール
-          %option{value: "4"}
-            レターパック
-          %option{value: "5"}
-            普通郵便(定形、定形外)
-          %option{value: "6"}
-            クロネコヤマト
-          %option{value: "7"}
-            ゆうパック
-          %option{value: "8"}
-            クリックポスト
-          %option{value: "9"}
-            ゆうパケット
+        .item-delivery-title-body-field
+          = form_with(model: @item) do |f|
+            = f.select :burden, [["選択してください", 1], ["未定", 2], ["ゆうメール", 3], ["レターパック", 4], ["普通郵便(定形、定形外)", 5], ["クロネコヤマト", 6], ["ゆうパック", 7], ["クリックポスト", 8], ["ゆうパケット", 9]], { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
 
       .item-delivery-title-body
         %ul.item-delivery-title-body-text
@@ -128,9 +101,9 @@
             発送元の地域
           %li.item-delivery-title-body-text-2
             必須
-        %select.item-delivery-title-body-field
-          %option{value: "1", selected: "1"}
-            選択してください
+        .item-delivery-title-body-field
+          = form_with(model: @item) do |f|
+            = f.select :area, [["選択してください", 1], ["北海道", 2], ["青森県", 3], ["岩手県", 4], ["宮城県", 5], ["秋田県", 6], ["山形県", 7], ["福島県", 8], ["茨城県", 9], ["栃木県", 10], ["群馬県", 11], ["埼玉県", 12], ["千葉県", 13], ["東京都", 14], ["神奈川県", 15], ["新潟県", 16], ["富山県", 17], ["石川県", 18], ["福井県", 19], ["山梨県", 20], ["長野県", 21], ["岐阜県", 22], ["静岡県", 23], ["愛知県", 24], ["三重県", 25], ["滋賀県", 26], ["大阪府", 27], ["京都府", 28], ["兵庫県", 29], ["奈良県", 30], ["和歌山県", 31], ["鳥取県", 32], ["島根県", 33], ["岡山県", 34], ["広島県", 35], ["山口県", 36], ["徳島県", 37], ["香川県", 38], ["愛媛県", 39], ["高知県", 40], ["福岡県", 41], ["佐賀県", 42], ["長崎県", 43], ["熊本県", 44], ["大分県", 45], ["宮崎県", 46], ["鹿児島県", 47], ["沖縄県", 48]], { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
         
       .item-delivery-title-body
         %ul.item-delivery-title-body-text
@@ -138,15 +111,11 @@
             発送までの日数
           %li.item-delivery-title-body-text-2
             必須
-        %select.item-delivery-title-body-field
-          %option{value: "1", selected: "1"}
-            選択してください
-          %option{value: "2"}
-            1~2で発送
-          %option{value: "3"}
-            2~3で発送
-          %option{value: "4"}
-            4~7で発送
+        .item-delivery-title-body-field
+          = form_with(model: @item) do |f|
+            = f.select :burden, [["選択してください", 1], ["1~2で発送", 2], ["2~3で発送", 3], ["4~7で発送", 4]], { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
+
+          
       
   .item-price
     .item-price-title
@@ -160,7 +129,9 @@
             必須
           %li.item-price-title-text-b-body-3
             ¥
-        %input.item-price-title-b-field{type: "number", name: "price", placeholder: "0"}
+        .item-price-title-text-b-field
+          = form_with(model: @item) do |f|
+            =f.number_field :price, class: "item-price-title-text-b-field-text", min: "300", max: "9999999", placeholder: "0"
           
   .item-profit
     .item-profit-title
@@ -172,17 +143,29 @@
 
       .item-profit-title-input
         .item-profit-title-input-1
-          %input.item-profit-title-input-1-field{type: "submit", value: "出品する"}
-
+          = form_with(model: @item) do |f|
+            =f.submit "出品", class: "item-profit-title-input-1-field"
+          
         .item-profit-title-input-2
           %input.item-profit-title-input-2-field{type: "submit", value: "下書きに保存する"}
       
         .item-profit-title-input-3
-          戻る
+          =link_to "戻る", items_path, class: "item-profit-title-input-3-field"
 
       .item-profit-title-body
-        %br.item-profit-body-1
-          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規       約に同意したことになります。
+        .item-profit-title-body-1
+          禁止されている
+          %a{ href: "#", class: "item-profit-body-2"} 行為
+          および
+          %a{ href: "#", class: "item-profit-body-2"}出品物
+          を必ずご確認ください。
+          %a{ href: "#", class: "item-profit-body-2"}偽ブランド品
+          や
+          %a{ href: "#", class: "item-profit-body-2"}盗品物
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          %a{ href: "#", class: "item-profit-body-2"}加盟店規約
+          に同意したことになります。    
+          
 
 .footer
   .footer__menu

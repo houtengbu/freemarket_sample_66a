@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
-  Validation :image, presense: true, length { maximum: 40}
-  Validation :name, presense: true 
-  Validation :category, presense: true
-  Validation :status, presense: true
-  Validation :burden, presense: true
-  Validation :area, presense: true
-  Validation :days_to_ship, presense: true
-  Validation :price, presense: true
+  validates :image, presence: true
+  validates :name, presence: true 
+  validates :category, presence: true
+  validates :status, presence: true
+  validates :burden, presence: true
+  validates :area, presence: true
+  validates :days_to_ship, presence: true
+  validates :price, presence: true
 end

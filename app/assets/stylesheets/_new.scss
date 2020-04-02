@@ -169,7 +169,37 @@
           margin-top: 20px;
           width: 620px;
           height: 48px;
+           &-text{
+            width: 620px;
+            height: 48px;
+           }
         }
+
+        &-body-b-text{
+          display: flex;
+          margin-top: 20px;
+          font-size: 14px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+           &-2{
+            margin-left: 10px;
+            background-color:gray;
+            color: white;
+           }
+
+        }
+
+        &-body-b-field{
+          margin-top: 20px;
+          width: 620px;
+          height: 48px;
+           &-text{
+            width: 620px;
+            height: 48px;
+            border-radius: 10px;
+           }
+        }
+
+
 
         
     }
@@ -206,6 +236,10 @@
           margin-top: 20px;
           width: 620px;
           height: 48px;
+           &-text{
+            width: 620px;
+            height: 48px;
+           }
         }
      }
     }
@@ -236,15 +270,21 @@
                &-2{
                  background-color: red ;
                  color: white;
-                 margin-right: 20px;
+                 margin-left: 20px;
+                 height: 21px;
+                 
               }
                &-3{
-                 margin-left: 320px;
+                 margin-left: 200px;
                }
             }
             
             &-field{
-              margin-right: 40px;
+              margin-right: 20px;
+               &-text{
+                 width: 285px;
+                 height: 48px;
+                }
             }
     
           }
@@ -275,37 +315,39 @@
            margin-top: 30px;
            text-align: center;
          
-          &-1-field{
-            background-color: red;
-            color: white;
-            width: 360px;
-            height: 48px;
+            &-1-field{
+              background-color: red;
+              color: white;
+              width: 360px;
+              height: 48px;
 
-           }
+            }
 
-          &-2-field{
-            margin-top: 20px;
-            background-color: gray;
-            color: black;
-            width: 360px;
-            height: 48px;
+            &-2-field{
+              margin-top: 20px;
+              background-color: gray;
+              color: black;
+              width: 360px;
+              height: 48px;
 
-           }
+            }
 
-          &-3{
-          color: lightblue;
-           }
+            &-3{
+              color: lightblue;
+             }
+            }
 
-          &-body{
-            font-size: 10px;
-            font-family: Arial;
-            text-align: center;
-             &-2{
-               margin-top: opx;
+        &-body-1{
+          margin-top: 20px;
+          font-size: 12px;
+          font-family: Arial;
+          text-align: center;
+           &-2{
+             color: blue;
              }
           }
 
-        }
+        
     }
   
    }
