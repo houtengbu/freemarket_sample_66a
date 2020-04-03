@@ -14,8 +14,11 @@
         最大10枚までアップロードできます。
       .item-image-title-box
         .item-image-title-box-input
-          .item-image-title-box-input-1
-            = fa_icon "camera"
+          %label.item-image-title-box-input-1
+            = form_with(model: @item) do |f|            
+              = f.fields_for :images do |i|
+                = fa_icon "camera"
+                = i.file_field :image, class: "item-image-title-box-input-1-d"
           .item-image-title-box-input-2
             ドッラクアンドドロップ
           .item-image-title-box-input-2
@@ -176,5 +179,5 @@
   .footer__mark  
     = link_to image_tag(src= "furima-logo.svg", class: "footer__mark--logo"),"/"
   .buy-fotter__name
-    © FURIMA, Inc.
+    FURIMA
     
