@@ -15,10 +15,19 @@
       .item-image-title-box
         .item-image-title-box-input
           %label.item-image-title-box-input-1
-            = form_with(model: @item) do |f|            
-              = f.fields_for :images do |i|
-                = fa_icon "camera"
-                = i.file_field :image, class: "item-image-title-box-input-1-d"
+            = form_with(model: @item) do |f| 
+              #image-box           
+                #previews
+                  - if @item.persisted?
+                    - @item.images.each_with_index do |image, i|
+                      = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+
+                = f.fields_for :images do |i|
+                  .js-file_group{ data: {index: i.index}} 
+                    = fa_icon "camera"
+                    = i.file_field :image, class: "item-image-title-box-input-1-d"
+                    %br/
+                    %span.js-remove 削除
           .item-image-title-box-input-2
             ドッラクアンドドロップ
           .item-image-title-box-input-2
