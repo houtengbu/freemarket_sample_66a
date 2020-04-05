@@ -1,38 +1,82 @@
 .header
-  .header-logo
-    %i.fas.fa-cart-plus
-  .header-text
-    %p mercari
-
-.item
-  .item-image
-    .item-image-form
-      .item-image-name
-        %lavel
-          出品画像
-        %span
-          必須
-      .item-image-text
-        %p
-          最大10枚までアップロードできます。
-      .item-image-upload
-        .item-image-upload-sell-a
-          %date-test ="sell-upload-container"
-          .item-image-upload-sell-b
-            - tabindex="0"
-            .item-image-upload-sell-c
-              %input{type: "file", accept: "", multiplestyle: ""}
-              
-      
-  .item-name  
-    %ul
+  .header-main
+    %li.header-main__logo
+      = link_to image_tag("/assets/logo.png", alt: "ロゴ", class: "rogo"), "#"
+      .header-main__logo__form
+        .header-main__logo__form-text
+          %input{type: "text", name: "search", placeholder: "キーワードから探す", class: "search"}
+        .header-main__logo__form-btn
+          %input{type: "submit", name: "submit", value: "検索", class: "submit"}
+            =link_to image_tag("/assets/icon-search 1.png", alt: "検索マーク", class: "submit-logo"), "#"
+    .header-main__logo__form__nav
+      = link_to "カテゴリー", "#", class: "nav" 
       %li
-      
+        = link_to "ログイン", "#", class: "login" 
+        = link_to "新規会員登録", "#", class: "new" 
 
-  .item-detail
+.item-detail
+  .item-detail__top
+    .item-detail__top__box
+      .item-detail__top__box__item-name 
+        item
+      .item-detail__top__box__item-image
+        = image_tag('/assets/cherry.png', alt: 'さくらんぼの画像', class: 'image-main')
+        %li.item-detail__top__box__item-image-sub
+          = image_tag('/assets/cherry.png', alt: 'さくらんぼの画像', class: 'image-sub') 
+          = image_tag('/assets/fd401033.png', alt: 'りんごの画像', class: 'image-sub') 
+          = image_tag('/assets/fd401266.png', alt: 'みかんの画像', class: 'image-sub') 
+      .item-detail__top__box__item-price 
+        .item-detail__top__box__item-price-box
+          ¥3000
+        .item-detail__top__box__item-price-detail
+          (税込) 送料込み
+      .item-detail__top__box__item-text
+        .item-detail__top__box__item-text-box
+          とても美味しくとろけるような甘さ。。。
+          農薬など一切使用しておらず体に害はなく
+          皮まで食べられる桃になっております。
+          今ならなんと３個セットでセール中です！
+          ぜひこの機会にお試し下さい。
+      .item-detail__table
+        %table
+          %tbody
+            %tr
+              %th 出品者
+              %td hoge
+            %tr
+              %th カテゴリー
+              %td
+                = link_to "その他", "#", class:"category"
+                %br/
+                = link_to "食品", "#", class:"category"
+                %br/
+                = link_to "果物", "#", class:"category"
+            %tr
+              %th 商品の状態
+              %td 新品/未使用
+            %tr
+              %th 配送料の負担
+              %td 送料込み（出品者負担）
+            %tr
+              %th 発送元の地域
+              %td 
+                = link_to "東京都", "#", class:"area"
+            %tr
+              %th 発送日の目安
+              %td 2~4日で発送
 
-  .item-delivery
-
-  .item-price
-
+      .item-detail__nav
+        %li
+          = link_to "< 前の商品", "#",class:"nav"
+          = link_to "後ろの商品 >", "#",class:"nav-next"
+      .item-detail__more-navi
+        = link_to "その他をもっと見る", "#"
+  .link
+    %link{href: "_show.scss", rel: "stylesheet", type: "scss"}
+    .link-text
+      %h2 だれでもかんたん、人生を変えるフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .link-icon
+        = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", alt: "アップルストアへのリンク", class:"icon"), "#"
+        = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", alt: "グーグルへのリンク", class:"icon"), "#"
 .footer

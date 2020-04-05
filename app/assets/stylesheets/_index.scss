@@ -1,0 +1,341 @@
+$colorwhite: white;
+
+.main__page {
+  padding: 220px 60px;
+}
+
+.main1 {
+  background-image: image-url("bg-mainVisual-pict_pc.jpg");
+  height: 600px;
+  width: 100vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  &__page {
+    padding: 220px 60px;
+  }
+  
+  &__title {
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  }
+  &__subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  }
+
+  &__btn {
+    display: flex;
+    margin: 24px 0 0 0;
+
+    &--apple {
+      margin-top: 10px;
+    }
+
+    &--google {
+      width: 100%;
+    }
+  }
+
+}
+
+
+.main2 {
+  padding: 0px 50px;
+
+  &__page {
+    font-size: 18px;
+  }
+
+  &__heading {
+    text-align: center;
+    margin: 45px;
+    font-size: 26px;
+    line-height: 1.4;
+    font-weight: bold;
+    position: relative;
+
+  }
+  
+  &__title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0px;
+
+    &__left {
+      margin: 16px 5% 0px 0px;
+      position: relative;
+      width: 280px;
+
+      &--text {
+        margin: 20px 0px;
+
+        &--sub {
+          margin: 20px 0px;
+        }
+      }
+
+      &--num {
+        border-radius: 4%;
+        width: 55px;
+        height: 55px;
+        background-color: #3CCACE;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.9;
+        color: $colorwhite;
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+
+    &__center {
+      margin: 16px 5% 0px 0px;
+      position: relative;
+      width: 280px;
+      
+      &--num {
+        border-radius: 4%;
+        width: 55px;
+        height: 55px;
+        background-color: #3CCACE;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.9;
+        color: $colorwhite;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      &--text {
+        margin: 20px 0px;
+
+        &--sub {
+          margin: 20px 0px;
+        }
+      }
+    }
+
+    &__right {
+      margin-top: 16px;
+      position: relative;
+
+      &--num {
+        border-radius: 4%;
+        width: 55px;
+        height: 55px;
+        background-color: #3CCACE;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.9;
+        color: $colorwhite;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      &--text {
+        margin: 20px 0px;
+
+        &--sub {
+          margin: 20px 0px;
+        }
+      }
+    }
+  }
+}
+
+.main3 {
+  background-image: image-url("bg-topMiddleDl-pict.jpg");
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  color: $colorwhite;
+  position: relative;
+
+  &__page {
+    position: absolute;
+    top: 100px;
+    left: 230px;
+  }
+
+  &__title {
+    font-size: 27px;
+    font-weight: bold;
+  }
+
+
+    &__subtitle {
+      font-size: 18px;
+      padding: 20px 0 ;
+    
+  }
+
+}
+
+.main4 {
+  padding: 0px 50px;
+
+  &__page {
+  }
+    
+  &__heading {
+    text-align: center;
+    font-size: 27px;
+    margin: 75px;
+    position: relative;
+  }
+  
+  &__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    &__left {
+      margin: 0px 5% 0px 0px;
+      width: 280px;
+
+      &--text {
+      }
+
+    }
+    &__center {
+        margin: 0px 5% 0px 0px;
+        width: 280px;
+    }
+
+    &__right {
+      margin-top: 0px;
+      width: 280px;
+    }
+  }
+}
+
+.main5 {
+  background-color: #f8f8f8;
+  margin-top: 120px;
+
+  &__page {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 120px 0px;
+  }
+  
+  &__picupcategory {
+  }
+
+    &__itemlist {
+      display: flex;
+      justify-content: space-between;
+      width: 780px;
+      margin: 26px auto;
+      &--left {
+        background-color: $colorwhite;
+
+      }
+      &--center {
+        background-color: $colorwhite;
+
+      }
+      &--right {
+        background-color: $colorwhite;
+
+      }
+  }
+}
+  
+  .main6 {
+    background-image: image-url("bg-appBanner-pict.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+
+    &__page {
+    height: 160px;
+    padding: 100px 40px;
+    }
+      
+    &__title {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    &__subtitle {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+
+    &__btn {
+      display: flex;
+      margin: 24px 0 0 0;
+      justify-content: center;
+  
+      &--apple {
+        margin-top: 10px;
+      }
+  
+      &--google {
+      }
+    }
+  }
+
+.input[type="search"] {
+  width: 300px;
+  height: 40px;
+}
+
+.spancolor {
+  color: #3ccace;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.main2__heading::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main4__heading::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
