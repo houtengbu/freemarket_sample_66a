@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     &__btn{
+      max-width: 340px;
       @include btn-default
     }
   }
