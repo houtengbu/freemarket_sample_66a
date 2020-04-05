@@ -1,0 +1,36 @@
+.footer{
+  height: auto;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  background-color: #e6e4e4;
+  text-align: center;
+  &__contents{
+    width: 450px;
+    height: 220px;
+    margin: 0 auto;
+    &__info{
+      &__box{
+        list-style:none;
+        padding:0;
+        lu{
+          color:black;
+          font-size: 13px;
+          display: inline-block;
+          margin: 0 0 0 16px;
+        }
+        a{
+          color: #333333;
+          text-decoration:none;
+        }
+      }
+    }
+    &__logo{
+      margin-top: 40px;
+    }
+    &__copyright{
+      margin:8px 0 0;
+      font-size:8px;
+    }
+  }
+}
