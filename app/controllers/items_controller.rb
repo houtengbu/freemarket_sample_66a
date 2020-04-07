@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
+    @item = Item.all.limit(3)
   end
 
   def show

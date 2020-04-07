@@ -93,9 +93,9 @@
         .main5__itemlist--left--pic
           = image_tag('/assets/icon-01.png',size: '154x237')
         .main5__itemlist--left--name
-          product1
+          = @item.name(1)
         .main5__itemlist--left--price
-          30000円
+          = @item.price(1)
       .main5__itemlist--center
         .main5__itemlist--center--pic
           = image_tag('/assets/icon-01.png',size: '154x237')
