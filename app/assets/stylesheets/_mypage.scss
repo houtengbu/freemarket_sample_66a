@@ -1,0 +1,9 @@
+.mypage {
+  background-color: #f8f8f8;
+  &__main {
+    margin: 40px;
+    display: flex;
+    width: 1020px;
+    padding: 0 0 40px;
+  }
+}

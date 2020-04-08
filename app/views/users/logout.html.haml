@@ -1,0 +1,12 @@
+.container
+  -# = render "layouts/header"
+
+  .mypage
+    .mypage__main
+      = render "modules/mypage-left"
+
+      .logout
+        .logout__content
+          = link_to "ログアウト", "#", method: :delete, class: "logout__content__btn"
+
+  -# = render "layouts/footer"

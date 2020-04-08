@@ -1,0 +1,35 @@
+.left-content{
+  width: 280px;
+  margin-right: 40px;
+  .mypage-navigation {
+    color: #333;
+    text-decoration: none;
+  }
+  .mypage-nav {
+    &__list li {
+      border-top: 1px solid;
+      color: #DDDDDD;
+      position: relative;
+      background-color: #FFFFFF;
+    }
+    &__list {
+      &__item {
+        padding: 13px;
+        display: flex;
+        color: #333;
+        text-decoration:none;
+      }
+      .fa-chevron-right {
+        position: absolute;
+        top: 38%;
+        right: 16px;
+        color: #ccc;
+      }
+    }
+    &__head {
+      margin: 40px 0 0;
+      font-weight: 700;
+    }
+  }
+
+}
