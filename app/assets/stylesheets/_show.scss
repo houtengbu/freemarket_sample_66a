@@ -1,88 +1,12 @@
-.header {
-  display: flex;
-  justify-content: center;
-}
-  .header-main {
-    height: 120px;
-    width: 1000px;
-    
-    &__logo {
-      list-style: none;
-      display: flex;
-      
-      a {
-        text-decoration: none;
-      }
-      .rogo {
-        height: 40px;
-        width: 150px;
-        margin-top: 15px;
-      }
-    } 
-      &__logo__form{
-        display: flex;
-        
-          .search {
-            width: 780px;
-            height: 35px;
-            margin-left: 30px;
-            margin-top: 20px;
-            padding-left: 5px;
-          }
-        &__logo__form-btn {
-          position: relative;
-        } 
-          .submit {
-            position: absolute;
-            margin-top: 20px;
-            padding: 0;
-            display: none;
-          }
-            .submit-logo {
-              width: 32px;
-              height: 36px;
-              background-color: #3CCACE;
-              margin-top: 20px;
-            }     
-        
-        }
-      
-
-
-    &__logo__form__nav {
-      list-style: none;
-      .nav {
-        float: left;
-        font-size: 13px;
-        margin-top: 7px;
-        color: black;
-      }
-      a {
-        text-decoration: none;
-      }
-      li {
-        float: right;
-        margin-top: 7px;
-      }
-      .login {
-        font-size: 13px;
-        color: black;
-        margin-right: 20px;
-      }
-      .new {
-        font-size: 13px;
-        color: black;
-      }
-    }
-  }
 .item-detail {
-  
-} 
+  height: 1430px;
+  width: 100vw;
+  background-color: #f8f8f8;
+}
   .item-detail__top {
-    background-color: #f8f8f8;
     display: flex;
     justify-content: center;
-    
+  
     &__box {
       background-color: white;
       width: 750px;
@@ -105,6 +29,7 @@
       }
         &__box__item-image-sub {
           list-style: none;
+          background-color: white;
           .image-sub {
             width: 160px;
             height: 110px;
@@ -138,6 +63,7 @@
           font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
         }
       }
+  }
       .item-detail__table {
         display: flex;
         justify-content: center;
@@ -176,9 +102,8 @@
           }
       }
       .item-detail__nav {
-        list-style: none;
         padding-top: 5px;
-        background-color: #f8f8f8;
+      }
         .nav {
           text-decoration: none;
           color: #1DC7D3;
@@ -188,59 +113,64 @@
           color: #1DC7D3;
           float: right;
         }
-      }
-      .item-detail__more-navi {
-        background-color: #f8f8f8;
-        font-size: 23px;
-        font-weight: bold;
-        padding: 25px 0;
-        
-        a {
-          text-decoration: none;
-          color: #1DC7D3;
+        li {
+          list-style: none;
+          background-color: #f8f8f8;
         }
-      }
+        .item-detail__more-navi {
+          background-color: #f8f8f8;
+          font-size: 23px;
+          font-weight: bold;
+          padding: 25px 0;
+          
+          a {
+            text-decoration: none;
+            color: #1DC7D3;
+          }
+        }
+  
+.link {
+  height: 400px;
+  background-image: url(bg-appBanner-pict.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .link-text {
     
+    h2 {
+      font-size: 25px;
+      font-weight: bolder;
+      color: white;
+      text-shadow: 0px 0 4px black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 35px;
+      font-weight: 100;
+      color: white;
+      text-shadow: 1px 0 4px black;
+      text-align: center;
+    }
   }
-  .link {
-    height: 400px;
-    background-image: url(bg-appBanner-pict.png);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-    .link-text {
-      
-      h2 {
-        font-size: 25px;
-        font-weight: bolder;
-        color: white;
-        text-shadow: 0px 0 4px black;
-        text-align: center;
-        margin-bottom: 20px;
+    .link-icon {
+      text-align: center;
+      a {
+        text-decoration: none;
       }
-      
-      p {
-        font-size: 35px;
-        font-weight: 100;
-        color: white;
-        text-shadow: 1px 0 4px black;
-        text-align: center;
+      .icon{
+        height: 60px;
+        width: 210px;
+        margin-top: 20px;
+      }
+      img:hover {
+        opacity: 0.5;
       }
     }
-      .link-icon {
-        text-align: center;
-        a {
-          text-decoration: none;
-        }
-        .icon{
-          height: 60px;
-          width: 210px;
-          margin-top: 20px;
-        }
-        img:hover {
-          opacity: 0.5;
-        }
-      }
+
+
+
 
