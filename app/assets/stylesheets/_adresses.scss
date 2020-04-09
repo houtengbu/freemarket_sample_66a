@@ -1,0 +1,47 @@
+.adress {
+  width: 700px;
+  background-color: #FFFFFF;
+  .adress-container {
+    &__head {
+      font-size: 24px;
+      padding: 7px 24px;
+      border-bottom: 2px solid #f8f8f8;
+      text-align: center;
+    }
+    &__main {
+      padding: 16px 16px 72px;
+      max-width: 340px;
+      margin: 0 auto;   
+      &__form {
+        margin: 8px 0 32px;
+      }  
+      &__form p {
+        margin: 40px 0 0;
+      }
+      &__form label{
+        font-weight: 600;
+      }
+      .input-required {
+        @include input-required
+      }
+      .input-arbitrary {
+        @include input-arbitrary
+      }
+      .input-default {
+        @include input-default
+      }
+      .select-tab{
+        margin: 16px 0 0;
+      }  
+      .btn-default {
+        @include btn-default
+      }   
+    }
+  }
+}
+
+ 
+
+
+
+

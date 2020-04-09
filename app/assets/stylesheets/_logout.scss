@@ -1,0 +1,19 @@
+.logout{
+  margin: 40px 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f8f8;
+  &__content{
+    width: 700px;
+    height: 179px;
+    margin: 40px auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__btn{
+      max-width: 340px;
+      @include btn-default
+    }
+  }
+}

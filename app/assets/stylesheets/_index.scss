@@ -241,12 +241,41 @@ $colorwhite: white;
   }
 
     &__itemlist {
+      font-weight: normal;
       display: flex;
       justify-content: space-between;
       width: 780px;
       margin: 26px auto;
       &--left {
         background-color: $colorwhite;
+        width: 230px;
+        height: 320px;
+        font-size: 16px;
+
+        &--pic {
+          overflow: hidden;
+        }
+        
+        &--name {
+          padding-left: 20px;
+          text-align: left;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &--price {
+          text-align: left;
+          padding-left: 20px;
+
+        }
+
+        &--text {
+          font-size: 10px;
+          text-align: left;
+          padding-left: 20px;
+
+        }
 
       }
       &--center {

@@ -89,27 +89,31 @@
     .main5__newlist
       %span.spancolor 新規投稿商品
     .main5__itemlist
-      .main5__itemlist--left
-        .main5__itemlist--left--pic
-          = image_tag('/assets/icon-01.png',size: '154x237')
-        .main5__itemlist--left--name
-          = @item.name(1)
-        .main5__itemlist--left--price
-          = @item.price(1)
-      .main5__itemlist--center
-        .main5__itemlist--center--pic
-          = image_tag('/assets/icon-01.png',size: '154x237')
-        .main5__itemlist--center--name
-          product2
-        .main5__itemlist--center--price
-          40000円
-      .main5__itemlist--right
-        .main5__itemlist--right--pic
-          = image_tag('/assets/icon-01.png',size: '154x237')
-        .main5__itemlist--right--name
-          product3
-        .main5__itemlist--right--price
-          50000円
+      - @item.each do |item|
+        .main5__itemlist--left
+          .main5__itemlist--left--pic
+            = image_tag('/assets/icon-01.png',size: '154x237')
+          .main5__itemlist--left--name
+            = item.name
+          .main5__itemlist--left--price
+            = item.price
+            円
+          .main5__itemlist--left--text
+            (税込)
+        -# .main5__itemlist--center
+        -#   .main5__itemlist--center--pic
+        -#     = image_tag('/assets/icon-01.png',size: '154x237')
+        -#   .main5__itemlist--center--name
+        -#     = item.name[1]
+        -#   .main5__itemlist--center--price
+        -#     40000円
+        -# .main5__itemlist--right
+        -#   .main5__itemlist--right--pic
+        -#     = image_tag('/assets/icon-01.png',size: '154x237')
+        -#   .main5__itemlist--right--name
+        -#     product3
+        -#   .main5__itemlist--right--price
+        -#     50000円
 .main6
   .main6__page
     .main6__title
