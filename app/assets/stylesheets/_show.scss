@@ -1,12 +1,10 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: white;
-
+}
   .header-main {
     height: 120px;
     width: 1000px;
-    
     
     &__logo {
       list-style: none;
@@ -77,9 +75,9 @@
       }
     }
   }
-}
 .item-detail {
-
+  
+} 
   .item-detail__top {
     background-color: #f8f8f8;
     display: flex;
@@ -202,47 +200,47 @@
           color: #1DC7D3;
         }
       }
-  }
-}
-.link {
-  height: 400px;
-  width: 1200px;
-  background-image: url(bg-appBanner-pict.png);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-  .link-text {
     
-    h2 {
-      font-size: 25px;
-      font-weight: bolder;
-      color: white;
-      text-shadow: 0px 0 4px black;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    p {
-      font-size: 35px;
-      font-weight: 100;
-      color: white;
-      text-shadow: 1px 0 4px black;
-      text-align: center;
-    }
   }
-    .link-icon {
-      text-align: center;
-      a {
-        text-decoration: none;
+  .link {
+    height: 400px;
+    background-image: url(bg-appBanner-pict.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .link-text {
+      
+      h2 {
+        font-size: 25px;
+        font-weight: bolder;
+        color: white;
+        text-shadow: 0px 0 4px black;
+        text-align: center;
+        margin-bottom: 20px;
       }
-      .icon{
-        height: 60px;
-        width: 210px;
-        margin-top: 20px;
-      }
-      img:hover {
-        opacity: 0.5;
+      
+      p {
+        font-size: 35px;
+        font-weight: 100;
+        color: white;
+        text-shadow: 1px 0 4px black;
+        text-align: center;
       }
     }
+      .link-icon {
+        text-align: center;
+        a {
+          text-decoration: none;
+        }
+        .icon{
+          height: 60px;
+          width: 210px;
+          margin-top: 20px;
+        }
+        img:hover {
+          opacity: 0.5;
+        }
+      }
+
