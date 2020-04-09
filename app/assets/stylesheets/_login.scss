@@ -1,0 +1,123 @@
+.login-main{
+  display: block;
+  background-color: #e6e4e4;
+  &__container{
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    &__header{
+      padding: 32px 16px;
+      line-height: 1.5;
+      text-align: center;
+      &__text{
+        font-size: 15px;
+        font-weight: bold;
+      }
+      &__btn{
+        margin: 20px 0 20px;
+        display: inline-block;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+        padding: 15px 150px;
+        background: #267eeb;
+        line-height: 1em;
+        transition: .3s;
+        border: 2px solid #267eed;
+      }
+      a{
+        text-decoration:none;
+        color: #ffffff;
+      }
+    }
+    &__content{
+      padding: 20px;
+      border-top: 1px solid #f5f5f5;
+      &__sns-account{
+        padding: 40px 50px;
+        text-align: center;
+        margin: 0 80px;
+        .btn-sns{
+          text-decoration:none;
+          position: relative;
+          display: block;
+          width: 400px;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          cursor: pointer;
+          text-align: center;
+          .icon-facebook{
+            position:absolute;
+            top:20px;
+            left:20px;
+            color:white;
+          }
+          .icon-google{
+            position:absolute;
+            top: 16px;
+            left: 22px;
+            height: 22px;
+            text-align: middle;
+            color: blue;
+          }
+          a{
+            text-decoration:none;
+          }
+        }
+        .btn-facebook{
+          position: relative;
+          background: #385185;
+          span{
+            color:white;
+          }
+        }
+        .btn-google{
+          position: relative;
+          border: #979797 solid 1px;
+          margin: 16px 0 0;
+          span{
+            color:black;
+          }
+      }
+    }
+        
+    
+    &__form{
+      max-width: 430px;
+      margin:0 auto;
+      &__group{
+        margin: 15px;
+        &__text{
+        height: 40px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #ffffff;
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 8px 0 0;
+        width: 370px;
+        }
+      }
+    }
+    &__footer{
+      margin: 40px 0 0;
+      text-align: center;
+      &__submit-btn{
+        margin: 40px 0 20px;
+        display: inline-block;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        padding: 15px 160px;
+        background: #ff0000;
+        color: #ffffff;
+        line-height: 1em;
+        transition: .3s;
+        border: 2px solid #ff0000;
+      }
+    }
+  }
+}
+}
