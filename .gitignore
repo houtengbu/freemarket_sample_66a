@@ -29,3 +29,9 @@ public/uploads/*
 /config/master.key
 
 .DS_Store
+
+
+[merge "merge_db_schema"]
+    name = Merge db/schema.rb
+    driver = merge_db_schema %O %A %B
+    recursive = text

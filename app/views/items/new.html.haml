@@ -31,7 +31,7 @@
               .item-image-title-box-input-1-text
                 ドッラクアンドドロップ
               .item-image-title-box-input-1-text     
-                またはクリックしてファイルをアップロード  
+                またはクリックしてファイルをアップロー
                     
               
   .item-name  
@@ -143,15 +143,21 @@
             ¥
         .item-price-title-text-b-field
           = form_with(model: @item) do |f|
-            =f.number_field :price, class: "item-price-title-text-b-field-text", min: "300", max: "9999999", placeholder: "0"
+            =f.number_field :price, class: "item-price-title-text-b-field-text", min: "300", max: "9999999", placeholder: "0", id: "price_calc"
           
   .item-profit
     .item-profit-title
-      .item-profit-title-text
-        .item-profit-title-text-1
-          販売利益
-        .item-profit-title-text-2
+      .item-profit-title-box-a        
+        .item-profit-title-box-a-text
           販売手数料(10%)
+        .item-profit-title-box-a-text-right_bar_1
+          -
+        
+      .item-profit-title-box-b
+        .item-profit-title-box-b-text
+          販売利益
+        %input#price.item-profit-title-box-b-text-right_bar_2{type: "number"}
+          -
 
       .item-profit-title-input
         .item-profit-title-input-1
@@ -189,4 +195,3 @@
     = link_to image_tag(src= "furima-logo.svg", class: "footer__mark--logo"),"/"
   .buy-fotter__name
     FURIMA
-    
