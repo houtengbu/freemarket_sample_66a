@@ -11,12 +11,6 @@
    }
 }
 
-#image-box{
-  
-  
-  
-}
-
 .item{
   background-color: #EEEEEE;
   width: 1440px;
@@ -326,18 +320,37 @@
       &-title{
         padding-left: 30px;
         padding-top: 20px;
-         &-box-a-text{
-           font-size: 14px;
-           font-family: Arial;
-         }
+         &-box-a{ 
+           display: flex;
+           
+            &-text{
+              font-size: 14px;
+              font-family: Arial;
+            }
 
-         &-box-b-text{
-           margin-top: 20px;
-           font-size: 14px;
-           font-family: Arial;
+            .right_bar{
+              margin-left: 210px; 
+            }
+        }
+         
+         &-box-b{
+          display: flex;
+           &-text{
+             margin-top: 20px;
+             font-size: 14px;
+             font-family: Arial;
+              
+            }
+           .right_bar_2{
+             margin-top: 20px;
+             margin-left: 260px; 
+          }
+
+            
+
         }
          &-input{
-           margin-top: 30px;
+           margin-top: 50px;
            text-align: center;
          
             &-1-field{
@@ -377,6 +390,7 @@
   
    }
  }
+
 
 
 .footer {
