@@ -1,0 +1,11 @@
+.header{
+  height: 128px;
+  width: 100vw;
+  text-align: center;
+  display:block;
+  background-color: #e6e4e4;
+  &__logo{
+    padding-top:40px;
+    margin:0;
+  }
+}
