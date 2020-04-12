@@ -7,4 +7,9 @@ class Item < ApplicationRecord
   validates :area, presence: true
   validates :days_to_ship, presence: true
   validates :price, presence: true
+
+  has_many :images
+  has_one :buyer
+  belongs_to :category
+  belongs_to :user
 end
