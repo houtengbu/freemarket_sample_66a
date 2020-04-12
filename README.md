@@ -72,14 +72,18 @@
 
 
 ## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |item|references|null: false,foreign_key:true|
 |image|string|null: false|
 ### Association
 - belongs_to :item
 
 ## categories
+|Column|Type|Options|
+|------|----|-------|
 |name|string|null: false|
-|ancestry|string||
+|ancestry|string|
 ### Association
 - has_many :items
 ### add_index
