@@ -1,5 +1,5 @@
-.header
-  = link_to image_tag(src= "furima-logo.svg", class: "buy-header__logo"),"/"
+.header-n
+  = link_to image_tag(src= "furima-logo.svg", class: "header-n-logo"),"/"
 
 .item
   .item-image
@@ -58,39 +58,39 @@
           = form_with(model: @item) do |f|
             = f.text_area :comment, class: "item-name-title-b-field-text",  cols: "60", rows: "7", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)                      例）2010年頃には一万円で購入したジャケットです。ライトグレーではありません。あわせやすいのでお勧めです。"
 
-  .item-detail
-    .item-detail-title
-      .item-detail-title-text
+  .item-specific
+    .item-specific-title
+      .item-specific-title-text
         商品の詳細
-      .item-detail-title-body-a
-        %ul.item-detail-title-body-a-text
-          %li.item-detail-title-body-a-text-1
+      .item-specific-title-body-a
+        %ul.item-specific-title-body-a-text
+          %li.item-specific-title-body-a-text-1
             カテゴリー
-          %li.item-detail-title-body-a-text-2
+          %li.item-specific-title-body-a-text-2
             必須
-        .item-detail-title-body-a-field
+        .item-specific-title-body-a-field
           = form_with(model: @item) do |f|
-            = f.select :category_id, [["選択してください", 1], ["メンズ", 2], ["レディース", 3], ["インテリア・小物・住まい", 4], ["ベビー・キッズ", 5]], { include_blank: true, selected: 1 }, { class: "item-detail-title-body-a-field-text"}
+            = f.select :category_id, [["選択してください", 1], ["メンズ", 2], ["レディース", 3], ["インテリア・小物・住まい", 4], ["ベビー・キッズ", 5]], { include_blank: true, selected: 1 }, { class: "item-specific-title-body-a-field-text"}
       
-      .item-detail-title-body-b
-        %ul.item-detail-title-body-b-text
-          %li.item-detail-title-body-b-text-1
+      .item-specific-title-body-b
+        %ul.item-specific-title-body-b-text
+          %li.item-specific-title-body-b-text-1
             ブランド
-          %li.item-detail-title-body-b-text-2
+          %li.item-specific-title-body-b-text-2
             任意
-        .item-detail-title-body-b-field
+        .item-specific-title-body-b-field
           = form_with(model: @item) do |f|
-            = f.text_field :brnad, class: "item-detail-title-body-b-field-text", placeholder: "例) シャネル"
+            = f.text_field :brnad, class: "item-specific-title-body-b-field-text", placeholder: "例) シャネル"
 
-      .item-detail-title-body-a
-        %ul.item-detail-title-body-a-text 
-          %li.item-detail-title-body-a-text-1
+      .item-specific-title-body-a
+        %ul.item-specific-title-body-a-text 
+          %li.item-specific-title-body-a-text-1
             商品の状態
-          %li.item-detail-title-body-a-text-2
+          %li.item-specific-title-body-a-text-2
             必須
-        .item-detail-title-body-a-field
+        .item-specific-title-body-a-field
           = form_with(model: @item) do |f|
-            = f.select :status, [["選択してください", 1], ["新品、未使用", 2], ["未使用に近い", 3], ["目立った傷や汚れなし", 4], ["やや傷れや汚れあり", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7]], { include_blank: true, selected: 1 }, { class: "item-detail-title-body-a-field-text"}
+            = f.collection_select :status, Status.all, :id, :name, { include_blank: true, selected: 1 }, { class: "item-specific-title-body-a-field-text"}
   
 
   .item-delivery
@@ -100,12 +100,12 @@
       .item-delivery-title-body
         %ul.item-delivery-title-body-text
           %li.item-delivery-title-body-text-1
-            配送量の負担
+            配送方法
           %li.item-delivery-title-body-text-2
             必須
         .item-delivery-title-body-field
           = form_with(model: @item) do |f|
-            = f.select :burden, [["選択してください", 1], ["未定", 2], ["ゆうメール", 3], ["レターパック", 4], ["普通郵便(定形、定形外)", 5], ["クロネコヤマト", 6], ["ゆうパック", 7], ["クリックポスト", 8], ["ゆうパケット", 9]], { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
+            = f.collection_select :burden, Burden.all, :id, :name, { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
 
       .item-delivery-title-body
         %ul.item-delivery-title-body-text
@@ -115,7 +115,7 @@
             必須
         .item-delivery-title-body-field
           = form_with(model: @item) do |f|
-            = f.select :area, [["選択してください", 1], ["北海道", 2], ["青森県", 3], ["岩手県", 4], ["宮城県", 5], ["秋田県", 6], ["山形県", 7], ["福島県", 8], ["茨城県", 9], ["栃木県", 10], ["群馬県", 11], ["埼玉県", 12], ["千葉県", 13], ["東京都", 14], ["神奈川県", 15], ["新潟県", 16], ["富山県", 17], ["石川県", 18], ["福井県", 19], ["山梨県", 20], ["長野県", 21], ["岐阜県", 22], ["静岡県", 23], ["愛知県", 24], ["三重県", 25], ["滋賀県", 26], ["大阪府", 27], ["京都府", 28], ["兵庫県", 29], ["奈良県", 30], ["和歌山県", 31], ["鳥取県", 32], ["島根県", 33], ["岡山県", 34], ["広島県", 35], ["山口県", 36], ["徳島県", 37], ["香川県", 38], ["愛媛県", 39], ["高知県", 40], ["福岡県", 41], ["佐賀県", 42], ["長崎県", 43], ["熊本県", 44], ["大分県", 45], ["宮崎県", 46], ["鹿児島県", 47], ["沖縄県", 48]], { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
+            = f.collection_select :area, Area.all, :id, :name, { include_blank: true, selected: 48 }, { class: "item-delivery-title-body-field-text"}
         
       .item-delivery-title-body
         %ul.item-delivery-title-body-text
@@ -125,7 +125,7 @@
             必須
         .item-delivery-title-body-field
           = form_with(model: @item) do |f|
-            = f.select :burden, [["選択してください", 1], ["1~2で発送", 2], ["2~3で発送", 3], ["4~7で発送", 4]], { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
+            = f.collection_select :days_to_ship, DaysToShip.all, :id, :name, { include_blank: true, selected: 1 }, { class: "item-delivery-title-body-field-text"}
 
           
       
@@ -186,13 +186,13 @@
           に同意したことになります。    
           
 
-.footer
-  .footer__menu
-    = link_to "プライバシーポリシー","#", class:"footer__menu--privacy"
-    = link_to "メルカリ利用規約","#", class:"footer__menu--terms"
-    = link_to "特定商取引に関する表記","#", class:"footer__menu--notation"
+.footer-n
+  .footer-n__menu
+    = link_to "プライバシーポリシー","#", class:"footer-n__menu--privacy"
+    = link_to "メルカリ利用規約","#", class:"footer-n__menu--terms"
+    = link_to "特定商取引に関する表記","#", class:"footer-n__menu--notation"
 
-  .footer__mark  
-    = link_to image_tag(src= "furima-logo.svg", class: "footer__mark--logo"),"/"
-  .buy-fotter__name
+  .footer-n__mark  
+    = link_to image_tag(src= "furima-logo.svg", class: "footer-n__mark--logo"),"/"
+  .fotter-n__name
     FURIMA

@@ -1,9 +1,9 @@
-.header {
+.header-n{
   background-color: #EEEEEE;
   width: 1440px;
   height: 128px;
   text-align: center;
-   &-body-logo{
+   &-logo{
      margin-top: 30px;
      height: 49px;
      width: 185px;
@@ -156,7 +156,7 @@
     }
    }
 
-   &-detail{
+   &-specific{
      background-color: white;
      width: 700px;
      height: 444px;
@@ -393,7 +393,7 @@
 
 
 
-.footer {
+.footer-n{
   width: 1440px;
   height: 220px;
   margin: 0 auto;
