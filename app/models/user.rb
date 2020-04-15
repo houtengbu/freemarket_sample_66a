@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :buyers
+  has_one :card
+  has_one :address
 end
