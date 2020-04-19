@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   
   def index
-    @item = Item.last(3)
+    sold_out_item_ids = Buyer.all.pluck(:item_id)
+    @item = Item.where.not(id: sold_out_item_ids).last(3)
   end
 
   def show
