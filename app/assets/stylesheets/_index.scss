@@ -180,12 +180,23 @@ $colorwhite: white;
   }
 
 
-    &__subtitle {
-      font-size: 18px;
-      padding: 20px 0 ;
-    
+  &__subtitle {
+    font-size: 18px;
+    padding: 20px 0 ;
   }
 
+  &__btn {
+    display: flex;
+    margin: 24px 0 0 0;
+
+    &--apple {
+      margin-top: 10px;
+    }
+
+    &--google {
+      width: 100%;
+    }
+  }
 }
 
 .main4 {
@@ -212,8 +223,8 @@ $colorwhite: white;
 
       &--text {
       }
-
     }
+  }
     &__center {
         margin: 0px 5% 0px 0px;
         width: 280px;
@@ -222,7 +233,6 @@ $colorwhite: white;
     &__right {
       margin-top: 0px;
       width: 280px;
-    }
   }
 }
 
