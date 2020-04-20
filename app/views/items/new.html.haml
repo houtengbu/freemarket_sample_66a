@@ -29,9 +29,9 @@
                   %br/
                   %span.js-remove 削除
               .item-image-title-box-input-1-text
-                ドッラクアンドドロップ
+                ドラックアンドドロップ
               .item-image-title-box-input-1-text     
-                またはクリックしてファイルをアップロー
+                またはクリックしてファイルをアップロード
                     
               
   .item-name  
@@ -63,15 +63,18 @@
       .item-specific-title-text
         商品の詳細
       .item-specific-title-body-a
-        %ul.item-specific-title-body-a-text
-          %li.item-specific-title-body-a-text-1
-            カテゴリー
-          %li.item-specific-title-body-a-text-2
-            必須
-        .item-specific-title-body-a-field
+        .item-specific-title-body-a-text
           = form_with(model: @item) do |f|
-            = f.select :category_id, [["選択してください", 1], ["メンズ", 2], ["レディース", 3], ["インテリア・小物・住まい", 4], ["ベビー・キッズ", 5]], { include_blank: true, selected: 1 }, { class: "item-specific-title-body-a-field-text"}
-      
+            = f.label "カテゴリー", class: "item-specific-title-body-a-text-1"  
+            %span.item-specific-title-body-a-text-2  必須
+            .item-specific-title-body-a-field
+              .item-specific-title-body-a-field-box
+                = f.select :category, @category_parent_array, {}, { class: "item-specific-title-body-a-field-box-text", id: "parent_category" }
+                %i.fas.fa-chevron-down.item-specific-title-body-a-field-box-text-down
+              
+              
+        
+
       .item-specific-title-body-b
         %ul.item-specific-title-body-b-text
           %li.item-specific-title-body-b-text-1
@@ -82,15 +85,15 @@
           = form_with(model: @item) do |f|
             = f.text_field :brnad, class: "item-specific-title-body-b-field-text", placeholder: "例) シャネル"
 
-      .item-specific-title-body-a
-        %ul.item-specific-title-body-a-text 
-          %li.item-specific-title-body-a-text-1
+      .item-specific-title-body-c
+        %ul.item-specific-title-body-c-text 
+          %li.item-specific-title-body-c-text-1
             商品の状態
-          %li.item-specific-title-body-a-text-2
+          %li.item-specific-title-body-c-text-2
             必須
-        .item-specific-title-body-a-field
+        .item-specific-title-body-c-field
           = form_with(model: @item) do |f|
-            = f.collection_select :status, Status.all, :id, :name, { include_blank: true, selected: 1 }, { class: "item-specific-title-body-a-field-text"}
+            = f.collection_select :status, Status.all, :id, :name, { include_blank: true, selected: 1 }, { class: "item-specific-title-body-c-field-text"}
   
 
   .item-delivery
