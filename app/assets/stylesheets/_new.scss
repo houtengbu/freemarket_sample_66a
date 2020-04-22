@@ -158,14 +158,14 @@
 
 // カテゴリーの子要素のセレクト画面の調整
 #children_wrapper{
-  margin-left: -620px;
-  margin-top: 120px;
+  margin-left: 0px;
+  margin-top: 20px;
 }
 
 // カテゴリーの孫要素のセレクト画面の調整
 #grandchildren_wrapper{
-  margin-left: -620px;
-  margin-top: 200px;
+  margin-left: 0px;
+  margin-top: 20px;
 
 }
 
@@ -196,7 +196,7 @@
         }
 
         &-body-a-text{
-          display: flex;
+         
           margin-top: 20px;
           font-size: 14px;
           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
@@ -224,7 +224,7 @@
 
         &-body-b-text{
           display: flex;
-          margin-top: 150px;
+          margin-top: 40px;
           font-size: 14px;
           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
            &-2{
