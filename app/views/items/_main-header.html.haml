@@ -1,0 +1,29 @@
+.main-header
+  .main-header__container
+    %ul.main-header__container__logo-and-search
+      %li.main-header__container__logo-and-search__logo
+        = link_to image_tag("logo.png", height:'40', width: '134', alt: "ロゴ１"), "#"
+      %li.main-header__container__logo-and-search__search
+        %form.main-header__container__logo-and-search__search__box
+          %input{value:"", placeholder:"何かお探しですか？" }
+            = link_to "#" do
+              %i.fa.fa-search
+    %ul.lists.clearfix
+      %li.lists__left.left-float
+        .categories
+          %h2
+            = link_to "#" do
+              %i.fa.fa-list-ul
+                %span カテゴリーで探す
+            
+      %li.signin-and-signup.right-float
+        %ul.account
+          - if user_signed_in?
+            %li.signin-btn
+              = link_to "マイページ", "/users/#{current_user.id}", class: "signin-btn__mypage"
+          - else
+            %li.signin-btn
+              = link_to "ログイン", user_session_path, class: "signin-btn__text"
+            %li.signup-btn
+              = link_to "新規会員登録", new_user_registration_path, class: "signup-btn__text"
+          %end
