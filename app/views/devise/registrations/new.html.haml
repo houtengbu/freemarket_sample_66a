@@ -30,7 +30,6 @@
               %li.singup-main__container__content__form__group__box__terms
                 必須
             = f.password_field :password, autocomplete: "off", class:"singup-main__container__content__form__group__text",placeholder:"7文字以上の半角英数字"
-
             
           .singup-main__container__content__form__group
             .singup-main__container__content__form__group__checkbox
@@ -45,6 +44,6 @@
             登録するのボタンを押すことにより、
             = link_to "利用規約", "#"
             に同意したものとみなします。
-            %input{type:"submit",class:"singup-main__container__footer__submit-btn", value:"登録する"}
+            = f.submit "登録する",class:"singup-main__container__footer__submit-btn"
 
 = render partial: 'devise/footer'
