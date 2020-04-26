@@ -81,3 +81,4 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'merge_db_schema'
 gem 'active_hash'
+

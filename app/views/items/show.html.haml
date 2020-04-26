@@ -2,7 +2,7 @@
   .item-detail__top
     .item-detail__top__box
       .item-detail__top__box__item-name 
-        item
+        = @item.name
       .item-detail__top__box__item-image
         = image_tag('/assets/cherry.png', alt: 'さくらんぼの画像', class: 'image-main')
         %li.item-detail__top__box__item-image-sub
@@ -11,16 +11,13 @@
           = image_tag('/assets/fd401266.png', alt: 'みかんの画像', class: 'image-sub') 
       .item-detail__top__box__item-price 
         .item-detail__top__box__item-price-box
-          ¥3000
+          ¥
+          = @item.price
         .item-detail__top__box__item-price-detail
           (税込) 送料込み
       .item-detail__top__box__item-text
         .item-detail__top__box__item-text-box
-          とても美味しくとろけるような甘さ。。。
-          農薬など一切使用しておらず体に害はなく
-          皮まで食べられる桃になっております。
-          今ならなんと３個セットでセール中です！
-          ぜひこの機会にお試し下さい。
+          = simple_format @item.text
       .item-detail__table
         %table
           %tbody
@@ -48,6 +45,13 @@
             %tr
               %th 発送日の目安
               %td 2~4日で発送
+      .item-detail__buy
+        = link_to "購入画面に進む", "#", class:"btn"
+      .item-detail__management
+        = link_to "#", class:"edit" do
+          = fa_icon "edit"
+        = link_to "#", class:"destroy" do
+          =fa_icon "trash"
       .item-detail__nav
       %li
         = link_to "< 前の商品", "#",class:"nav"

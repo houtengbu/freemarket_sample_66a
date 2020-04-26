@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(2)
   end
 
   def new

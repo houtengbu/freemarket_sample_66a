@@ -1,5 +1,5 @@
 .item-detail {
-  height: 1430px;
+  height: 1510px;
   width: 100vw;
   background-color: #f8f8f8;
 }
@@ -57,7 +57,7 @@
         
       
         &-box {
-          text-align: left;
+          text-align: center;
           font-size: 18px;
           margin: 40px;
           font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
@@ -101,8 +101,43 @@
             color: #1DC7D3;
           }
       }
+      .item-detail__buy {
+        text-align: center;
+        width: 500px;
+        height: 45px;
+        border: solid;
+        margin-left: 130px;
+        margin-bottom: 10px;
+        background-color: #1DC7D3;
+        border-color: #1DC7D3;
+
+        .btn {
+          text-decoration: none;
+          font-size: 25px;
+          color: white;
+          font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+        }
+      }
+      .item-detail__management {
+        text-align: right;
+        .edit {
+          text-decoration: none;
+          color: #1DC7D3;
+          font-size: 25px;
+        }
+        .destroy {
+          text-decoration: none;
+          color: #1DC7D3;
+          margin-right: 20px;
+          font-size: 28px;
+        }
+      }
+      
+
+
       .item-detail__nav {
         padding-top: 5px;
+        margin-bottom: 10px;
       }
         .nav {
           text-decoration: none;
