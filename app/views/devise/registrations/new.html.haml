@@ -5,43 +5,46 @@
     %h2.singup-main__container__header 会員情報入力
     .singup-main__container__content
       .singup-main__container__content__form
-        .singup-main__container__content__form__group
-          %ul.singup-main__container__content__form__group__box
-            %li.singup-main__container__content__form__group__box__type
-              ニックネーム
-            %li.singup-main__container__content__form__group__box__terms
-              必須
-          %input{type: "text", class:"singup-main__container__content__form__group__text",placeholder:"例）メルカリ太郎"}
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .singup-main__container__content__form__group
+            %ul.singup-main__container__content__form__group__box
+              %li.singup-main__container__content__form__group__box__type
+                ニックネーム
+              %li.singup-main__container__content__form__group__box__terms
+                必須
+            = f.text_field :nickname, autofocus: true, class:"singup-main__container__content__form__group__text",placeholder:"例）メルカリ太郎"
 
-        .singup-main__container__content__form__group
-          %ul.singup-main__container__content__form__group__box
-            %li.singup-main__container__content__form__group__box__type
-              メールアドレス
-            %li.singup-main__container__content__form__group__box__terms
-              必須
-          %input{type: "text", class:"singup-main__container__content__form__group__text",placeholder:"PC・携帯どちらでも可"}
+          .singup-main__container__content__form__group
+            %ul.singup-main__container__content__form__group__box
+              %li.singup-main__container__content__form__group__box__type
+                メールアドレス
+              %li.singup-main__container__content__form__group__box__terms
+                必須
+            = f.email_field :email, autofocus: true, class:"singup-main__container__content__form__group__text",placeholder:"PC・携帯どちらでも可"
 
-        .singup-main__container__content__form__group
-          %ul.singup-main__container__content__form__group__box
-            %li.singup-main__container__content__form__group__box__type
-              パスワード
-            %li.singup-main__container__content__form__group__box__terms
-              必須
-          %input{type: "text", class:"singup-main__container__content__form__group__text",placeholder:"7文字以上の半角英数字"}
+          .singup-main__container__content__form__group
+            %ul.singup-main__container__content__form__group__box
+              %li.singup-main__container__content__form__group__box__type
+                パスワード
+              %li.singup-main__container__content__form__group__box__terms
+                必須
+            = f.password_field :password, autocomplete: "off", class:"singup-main__container__content__form__group__text",placeholder:"7文字以上の半角英数字"
+
             
-        .singup-main__container__content__form__group
-          .singup-main__container__content__form__group__checkbox
-            .singup-main__container__content__form__group__checkbox__info
-              ※英字と数字の両方を含めて設定してください
-            .singup-main__container__content__form__group__checkbox__btn
-              %input{type: "checkbox", class: "singup-main__container__info__checkbox"}
-              パスワードを表示する
+          .singup-main__container__content__form__group
+            .singup-main__container__content__form__group__checkbox
+              .singup-main__container__content__form__group__checkbox__info
+                ※英字と数字の両方を含めて設定してください
+              .singup-main__container__content__form__group__checkbox__btn
+                %input{type: "checkbox", class: "singup-main__container__info__checkbox"}
+                パスワードを表示する
       
-        .singup-main__container__footer
-          %p.singup-main__container__footer__info
-          登録するのボタンを押すことにより、
-          = link_to "利用規約", "#"
-          に同意したものとみなします。
-          %input{type:"submit",class:"singup-main__container__footer__submit-btn", value:"登録する"}
+          .singup-main__container__footer
+            %p.singup-main__container__footer__info
+            登録するのボタンを押すことにより、
+            = link_to "利用規約", "#"
+            に同意したものとみなします。
+            %input{type:"submit",class:"singup-main__container__footer__submit-btn", value:"登録する"}
 
 = render partial: 'devise/footer'
