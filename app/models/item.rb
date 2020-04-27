@@ -10,9 +10,9 @@ class Item < ApplicationRecord
   has_many :images
   has_one :buyer
   belongs_to :category
-  # belongs_to :user
-  # belongs_to :saler, class_name: "User"
-  # belongs_to :buyer, class_name: "User"
+  belongs_to :user, optional: true
+  belongs_to :saler, class_name: "User", optional: true
+  belongs_to :buyer, class_name: "User", optional: true
   belongs_to_active_hash :area
   belongs_to_active_hash :burden
   belongs_to_active_hash :days_to_ship
