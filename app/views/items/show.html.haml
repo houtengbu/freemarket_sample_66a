@@ -2,7 +2,7 @@
   .item-detail__top
     .item-detail__top__box
       .item-detail__top__box__item-name 
-        = @item.name
+        = @items.name
       .item-detail__top__box__item-image
         = image_tag('/assets/cherry.png', alt: 'さくらんぼの画像', class: 'image-main')
         %li.item-detail__top__box__item-image-sub
@@ -12,12 +12,12 @@
       .item-detail__top__box__item-price 
         .item-detail__top__box__item-price-box
           ¥
-          = @item.price
+          = @items.price
         .item-detail__top__box__item-price-detail
           (税込) 送料込み
       .item-detail__top__box__item-text
         .item-detail__top__box__item-text-box
-          = simple_format @item.text
+          = simple_format @items.text
       .item-detail__table
         %table
           %tbody
@@ -45,13 +45,15 @@
             %tr
               %th 発送日の目安
               %td 2~4日で発送
-      .item-detail__buy
-        = link_to "購入画面に進む", "#", class:"btn"
-      .item-detail__management
-        = link_to "#", class:"edit" do
-          = fa_icon "edit"
-        = link_to "#", class:"destroy" do
-          =fa_icon "trash"
+      - unless user_signed_in? && current_user.id == @item.user_id        
+        .item-detail__buy
+          = link_to "購入画面に進む", "#", class:"btn"
+      - if user_signed_in? && current_user.id == @item.user_id
+        .item-detail__management
+          = link_to "#", class:"edit" do
+            = fa_icon "edit"
+          = link_to "#", class:"destroy" do
+            =fa_icon "trash"
       .item-detail__nav
       %li
         = link_to "< 前の商品", "#",class:"nav"
