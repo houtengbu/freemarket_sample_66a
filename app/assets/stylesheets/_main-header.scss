@@ -77,7 +77,7 @@
       .signin-btn {
         float: left;
         margin: 0;
-        .signin-btn__text{
+        &__text{
           display: block;
           background: #ea352d;
           border: 1px solid #ea352d;
@@ -89,7 +89,7 @@
           text-align: center;
           line-height: 30px;
         }
-        .signin-btn__mypage{
+        &__mypage{
           display: block;
           background: #fafafa;
           border: 1px solid black;
@@ -106,7 +106,7 @@
         display: inline-block;
         margin: 0 0 0 11px;
         border-radius: 4px;
-        .signup-btn__text{
+        &__text{
           display: block;
           border: 1px solid #0099e8;
           background: #fff;
