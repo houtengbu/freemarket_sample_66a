@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  # before_action :set_category, only: [:new, :create, :edit, :update]
 
+  #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
+  # before_action :set_category, only: [:new, :create, :edit, :update]
   # before_action :set_item, except: [:index, :new, :create]
 
 
@@ -65,8 +66,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
+    # @product.destroy
+    # redirect_to root_path
   end
 
   private
@@ -74,12 +76,14 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :text, :status_id, :burden_id, :area_id, :days_to_ship_id, :selling_price, :category_id, images_attributes: [:image])
   end
-  
+
+
+  #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   # def set_item
   #   @item = Item.find(params[:id])
   # end
   
-
+#商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   # def set_category
   #   @category_parent_arrays = CategoryParentArray.all.order("id ASC").limit(13)
   # end
