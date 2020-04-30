@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     @category_parent_array = []
     @category_children = []
     # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
-    Category.where(ancestry: nil).pluck(:name) do |parent|
+    Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent
 
     end
