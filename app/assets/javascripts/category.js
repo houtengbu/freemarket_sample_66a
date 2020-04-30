@@ -19,6 +19,7 @@ $(function(){
       $('.item-specific-title-body-a-text').append(childSelectHtml);
     }
 
+
     // 孫カテゴリーの表示作成
     function appendGrandchidrenBox(insertHTML){
       var grandchildSelectHtml = '';
@@ -67,6 +68,7 @@ $(function(){
       }
     });
   
+
      // 子カテゴリー選択後のイベント
   $('.item-specific-title-body-a-text').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
@@ -98,4 +100,6 @@ $(function(){
       $('#brand_wrapper').remove();
     }
   });   
-  });
+
+
+});
