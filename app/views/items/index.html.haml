@@ -95,28 +95,14 @@
       - @item.each do |item|
         .main5__itemlist--left
           .main5__itemlist--left--pic
-            = image_tag "icon-01.png",size: '154x237'
+            = image_tag item.images[0].image.url, width: '230', height: '180'
           .main5__itemlist--left--name
             = item.name
           .main5__itemlist--left--price
-            = item.price
+            = item.selling_price
             円
           .main5__itemlist--left--text
             (税込)
-        -# .main5__itemlist--center
-        -#   .main5__itemlist--center--pic
-        -#     = image_tag "icon-01.png',size: '154x237')
-        -#   .main5__itemlist--center--name
-        -#     = item.name[1]
-        -#   .main5__itemlist--center--price
-        -#     40000円
-        -# .main5__itemlist--right
-        -#   .main5__itemlist--right--pic
-        -#     = image_tag "icon-01.png',size: '154x237')
-        -#   .main5__itemlist--right--name
-        -#     product3
-        -#   .main5__itemlist--right--price
-        -#     50000円
 .main6
   .main6__page
     .main6__title
@@ -129,5 +115,5 @@
       .main6__btn--google
         = image_tag "google-play-badge.png",size: '200x73'
 
-.footer
+  .footer
 

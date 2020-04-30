@@ -74,6 +74,8 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
+
+gem 'pry-rails'
 gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
@@ -84,3 +86,4 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'merge_db_schema'
 gem 'active_hash'
+gem 'payjp'
