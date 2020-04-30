@@ -14,7 +14,7 @@
 .item{
   background-color: #EEEEEE;
   width: 1440px;
-  height: 2128px;
+  height: 2328px;
  
    &-image{
      background-color: white;
@@ -156,10 +156,34 @@
     }
    }
 
+// カテゴリーの子要素のセレクト画面の調整
+#children_wrapper{
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+// カテゴリーの孫要素のセレクト画面の調整
+#grandchildren_wrapper{
+  margin-left: 0px;
+  margin-top: 20px;
+
+}
+
+// カテゴリーの親要素のセレクト画面の調整
+.item-specific-title-body-a-field-box-text-down{
+  display: none;
+
+}
+
+// カテゴリーの子・孫要素のセレクト画面の調整
+.fas.fa-chevron-down.item-specific-title-body-a-field-text-down{
+  display: none;
+}
+
    &-specific{
      background-color: white;
      width: 700px;
-     height: 444px;
+     height: 644px;
      margin-top: 5px;
      display: block;
      margin-left: auto;
@@ -172,19 +196,23 @@
         }
 
         &-body-a-text{
-          display: flex;
+         
           margin-top: 20px;
           font-size: 14px;
           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          
+          
            &-2{
             margin-left: 10px;
             background-color: red;
             color: white;
            }
 
+        
+
         }
 
-        &-body-a-field{
+        &-body-a-field-box{
           margin-top: 20px;
           width: 620px;
           height: 48px;
@@ -196,7 +224,7 @@
 
         &-body-b-text{
           display: flex;
-          margin-top: 20px;
+          margin-top: 40px;
           font-size: 14px;
           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
            &-2{
@@ -218,6 +246,29 @@
            }
         }
 
+        &-body-c-text{
+          display: flex;
+          margin-top: 20px;
+          font-size: 14px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+           &-2{
+            margin-left: 10px;
+            background-color: red;
+            color: white;
+           }
+
+        }
+
+        
+        &-body-c-field{
+          margin-top: 20px;
+          width: 620px;
+          height: 48px;
+           &-text{
+            width: 620px;
+            height: 48px;
+           }
+        }
 
 
         
