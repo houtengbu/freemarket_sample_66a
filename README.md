@@ -62,6 +62,7 @@
 |days_to_ship|integer|null: false|
 |selling_price|integer|null: false|
 |category|references|null: false,foreign_key:true|
+|price|integer|null: false|
 |brand|string||
 ### Association
 - has_many :images

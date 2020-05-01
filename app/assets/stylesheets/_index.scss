@@ -194,12 +194,23 @@ $colorwhite: white;
   }
 
 
-    &__subtitle {
-      font-size: 18px;
-      padding: 20px 0 ;
-    
+  &__subtitle {
+    font-size: 18px;
+    padding: 20px 0 ;
   }
 
+  &__btn {
+    display: flex;
+    margin: 24px 0 0 0;
+
+    &--apple {
+      margin-top: 10px;
+    }
+
+    &--google {
+      width: 100%;
+    }
+  }
 }
 
 .main4 {
@@ -226,13 +237,12 @@ $colorwhite: white;
 
       &--text {
       }
-
     }
     &__center {
-        margin: 0px 5% 0px 0px;
-        width: 280px;
+      margin: 0px 5% 0px 0px;
+      width: 280px;
     }
-
+    
     &__right {
       margin-top: 0px;
       width: 280px;
@@ -255,12 +265,48 @@ $colorwhite: white;
   }
 
     &__itemlist {
+      font-weight: normal;
       display: flex;
       justify-content: space-between;
       width: 780px;
       margin: 26px auto;
       &--left {
         background-color: $colorwhite;
+        width: 230px;
+        height: 320px;
+        font-size: 16px;
+        position: relative;
+
+        &--pic {
+          overflow: hidden;
+        }
+        
+        &--name {
+          padding-left: 20px;
+          text-align: left;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          position: absolute;
+          bottom: 80px;
+        }
+
+        &--price {
+          text-align: left;
+          padding-left: 20px;
+          position: absolute;
+          bottom: 60px;
+
+        }
+
+        &--text {
+          font-size: 10px;
+          text-align: left;
+          padding-left: 20px;
+          position: absolute;
+          bottom: 40px;
+
+        }
 
       }
       &--center {

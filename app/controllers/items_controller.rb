@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
 
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    sold_out_item_ids = Buyer.all.pluck(:item_id)
+    @item = Item.order(id: "DESC").where.not(id: sold_out_item_ids).first(3)
   end
 
   def show
