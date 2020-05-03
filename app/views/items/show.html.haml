@@ -2,58 +2,72 @@
   .item-detail__top
     .item-detail__top__box
       .item-detail__top__box__item-name 
-        = @items.name
+        = @item.name
       .item-detail__top__box__item-image
-        = image_tag('/assets/cherry.png', alt: 'さくらんぼの画像', class: 'image-main')
+        = image_tag item.images[0].image.url, class: 'image-main'
         %li.item-detail__top__box__item-image-sub
-          = image_tag('/assets/cherry.png', alt: 'さくらんぼの画像', class: 'image-sub') 
-          = image_tag('/assets/fd401033.png', alt: 'りんごの画像', class: 'image-sub') 
-          = image_tag('/assets/fd401266.png', alt: 'みかんの画像', class: 'image-sub') 
+          = image_tag('cherry.png', class: 'image-sub') 
+          = image_tag('fd401033.png', class: 'image-sub') 
+          = image_tag('fd401266.png', class: 'image-sub') 
       .item-detail__top__box__item-price 
         .item-detail__top__box__item-price-box
           ¥
-          = @items.price
+          = @item.price
         .item-detail__top__box__item-price-detail
           (税込) 送料込み
       .item-detail__top__box__item-text
         .item-detail__top__box__item-text-box
-          = simple_format @items.text
+          = simple_format @item.text
       .item-detail__table
         %table
           %tbody
             %tr
               %th 出品者
-              %td hoge
+              %td
+                = @item.user.nickname
             %tr
               %th カテゴリー
               %td
-                = link_to "その他", "#", class:"category"
-                %br/
-                = link_to "食品", "#", class:"category"
-                %br/
-                = link_to "果物", "#", class:"category"
+                = link_to "#", class:"category" do
+                  = @category.name
+                %br
+                = link_to "#", class:"category" do
+                  = @category.name
+                %br
+                = link_to "#", class:"category" do
+                  = @category.name
             %tr
               %th 商品の状態
-              %td 新品/未使用
+              %td
+                = @status.name
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
+              %td
+                = @burden.name
             %tr
               %th 発送元の地域
-              %td 
-                = link_to "東京都", "#", class:"area"
+              %td
+                = link_to '#', class: "area" do
+                  = @area.name
             %tr
               %th 発送日の目安
-              %td 2~4日で発送
-      - unless user_signed_in? && current_user.id == @item.user_id        
+              %td
+                = @days_to_ship.name
+      - if user_signed_in? 
+        - if current_user.id == @item.user_id 
+          .item-detail__management
+            = link_to "#", class:"edit" do
+              = fa_icon "edit"
+            = link_to "#", class:"destroy" do
+              =fa_icon "trash"
+        - else
+          .item-detail__buy
+            = link_to "購入画面に進む", buy_item_path, class:"btn", method: :get
+      - else 
         .item-detail__buy
-          = link_to "購入画面に進む", "#", class:"btn"
-      - if user_signed_in? && current_user.id == @item.user_id
-        .item-detail__management
-          = link_to "#", class:"edit" do
-            = fa_icon "edit"
-          = link_to "#", class:"destroy" do
-            =fa_icon "trash"
+          = link_to "購入画面に進む", user_session_path, class:"btn", method: :get
+      
+      
       .item-detail__nav
       %li
         = link_to "< 前の商品", "#",class:"nav"

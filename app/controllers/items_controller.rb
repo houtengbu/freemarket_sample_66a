@@ -5,9 +5,14 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.find_by(params[:id])
+    @item = Item.find_by(params[:id])
+    @area = Area.find_by(params[:id])
+    @status = Status.find(@item[:id])
+    @burden = Burden.find(@item[:id])
+    @days_to_ship = DaysToShip.find(@item[:id])
+    
+    @category = Category.find_by(params[:category_id])
   end
-
   def new
     @item = Item.new
     @item.images.new
