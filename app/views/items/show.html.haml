@@ -4,7 +4,7 @@
       .item-detail__top__box__item-name 
         = @item.name
       .item-detail__top__box__item-image
-        = image_tag item.images[0].image.url, class: 'image-main'
+        = image_tag('cherry.png', class: 'image-main')
         %li.item-detail__top__box__item-image-sub
           = image_tag('cherry.png', class: 'image-sub') 
           = image_tag('fd401033.png', class: 'image-sub') 
@@ -12,7 +12,7 @@
       .item-detail__top__box__item-price 
         .item-detail__top__box__item-price-box
           ¥
-          = @item.price
+          = @item.selling_price
         .item-detail__top__box__item-price-detail
           (税込) 送料込み
       .item-detail__top__box__item-text
@@ -39,7 +39,7 @@
             %tr
               %th 商品の状態
               %td
-                = @status.name
+                = @item.status
             %tr
               %th 配送料の負担
               %td
