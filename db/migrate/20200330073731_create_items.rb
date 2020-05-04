@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :selling_price, null: false
       t.bigint "category_id", null: false  
       t.integer :price, null: false
-      t.string :image, null: false
+      t.bigint "image_id", null: false
       t.timestamps
     end
   end
