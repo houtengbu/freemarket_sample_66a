@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   # before_action :set_category, only: [:new, :create, :edit, :update]
-  # before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, only: [:edit, :update]
 
 
   def index
@@ -56,10 +56,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent_array = []
+    # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
   end
 
   def update
-    if @item.update(product_params)
+    if @item.update(item_params)
       redirect_to root_path
     else
       render :edit
@@ -75,14 +80,14 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :status_id, :burden_id, :area_id, :days_to_ship_id, :selling_price, :category_id, images_attributes: [:image])
+    params.require(:item).permit(:name, :text, :status_id, :burden_id, :area_id, :days_to_ship_id, :selling_price, :category_id, images_attributes: [:image, :_destroy, :id])
   end
 
 
   #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
-  # def set_item
-  #   @item = Item.find(params[:id])
-  # end
+  def set_item
+    @item = Item.find(params[:id])
+  end
   
 #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   # def set_category
