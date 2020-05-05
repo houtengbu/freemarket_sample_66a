@@ -9,8 +9,14 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+  const dele = ()=> {
+    const html = `<div class="js-remove" id="aaaa">削除</div>
+                  </div>`;
+    return html;
+  }
+
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px" id="test">`;
     console.log(html)
     return html;
   }
@@ -28,10 +34,13 @@ $(document).on('turbolinks:load', ()=> {
     const blobUrl = window.URL.createObjectURL(file);
     console.log(blobUrl)
     
+    //すでに選んであるファイルを変更した場合
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('image', blobUrl);
+      // 新規投稿した際にプレビューidの下に画像を入れ、イメージボックスidの下に新しいファイルフィールドを作る。そのせいで画像の下ではなく真ん中の下にファイルを選択してくださいとでる。やりたいのは画像の下に削除を移動したい
     } else {
       $('#previews').append(buildImg(targetIndex, blobUrl));
+      // $('#test').append(dele);
       $('#image-box').append(buildFileField(fileIndex[0]));
       console.log(fileIndex);
 
