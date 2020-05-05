@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 2020_04_26_160119) do
     t.integer "days_to_ship_id", null: false
     t.integer "selling_price", null: false
     t.bigint "category_id", null: false
-    t.bigint "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "buyer_id"

@@ -1,5 +1,5 @@
 class RemoveColumnPrice < ActiveRecord::Migration[5.2]
-  def up
-    remove_column :items, :user_id
+  def upex
+    remove_column :items, :image_id
   end
 end

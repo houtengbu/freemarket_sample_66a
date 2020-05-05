@@ -11,13 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find_by(params[:id])
-    @area = Area.find_by(params[:id])
-    @status = Status.find(@item[:id])
-    @burden = Burden.find(@item[:id])
-    @days_to_ship = DaysToShip.find(@item[:id])
-    
-    @category = Category.find_by(params[:category_id])
+    @item = Item.find(params[:id])
   end
   def new
     

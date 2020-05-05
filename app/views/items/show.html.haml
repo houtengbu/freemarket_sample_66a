@@ -24,48 +24,48 @@
             %tr
               %th 出品者
               %td
-                = @item.user.nickname
+                -# = @item.user.nickname
             %tr
               %th カテゴリー
               %td
-                = link_to "#", class:"category" do
-                  = @category.name
+                -#  = link_to "#", class:"category" do
+                -#   = @category.name
                 %br
-                = link_to "#", class:"category" do
-                  = @category.name
+                -# = link_to "#", class:"category" do
+                  -# = @category.name
                 %br
-                = link_to "#", class:"category" do
-                  = @category.name
+                -# = link_to "#", class:"category" do
+                -#   = @category.name
             %tr
               %th 商品の状態
               %td
-                = @item.status
+                -# = @item.status
             %tr
               %th 配送料の負担
               %td
-                = @burden.name
+                -# = @burden.name
             %tr
               %th 発送元の地域
               %td
                 = link_to '#', class: "area" do
-                  = @area.name
+                  = @item.area.name
             %tr
               %th 発送日の目安
               %td
-                = @days_to_ship.name
-      - if user_signed_in? 
-        - if current_user.id == @item.user_id 
-          .item-detail__management
-            = link_to "#", class:"edit" do
-              = fa_icon "edit"
-            = link_to "#", class:"destroy" do
-              =fa_icon "trash"
-        - else
-          .item-detail__buy
-            = link_to "購入画面に進む", buy_item_path, class:"btn", method: :get
-      - else 
-        .item-detail__buy
-          = link_to "購入画面に進む", user_session_path, class:"btn", method: :get
+                -# = @days_to_ship.name
+      -# - if user_signed_in? 
+      -#   - if current_user.id == @item.user_id 
+      -#     .item-detail__management
+      -#       = link_to "#", class:"edit" do
+      -#         = fa_icon "edit"
+      -#       = link_to "#", class:"destroy" do
+      -#         =fa_icon "trash"
+      -#   - else
+      -#     .item-detail__buy
+      -#       = link_to "購入画面に進む", buy_item_path, class:"btn", method: :get
+      -# - else 
+      -#   .item-detail__buy
+      -#     = link_to "購入画面に進む", user_session_path, class:"btn", method: :get
       
       
       .item-detail__nav
