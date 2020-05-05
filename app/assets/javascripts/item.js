@@ -19,6 +19,7 @@ $(document).on('turbolinks:load', function() {
     if (window.location.href.match(/\/items\/\d+\/edit/)){
       //登録済み画像のプレビュー表示欄の要素を取得する
       var prevContent = $('.label-content').prev();
+      console.log(prevContent)
       labelWidth = (770 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
       $('.label-content').css('width', labelWidth);
       //プレビューにidを追加
@@ -42,10 +43,12 @@ $(document).on('turbolinks:load', function() {
       $('.label-content').css('width', labelWidth);
     }
     // プレビューの追加
+    // ドキュメントの中のhidden-fieldがchangeされた時に.(hidden-fieldが変更された時と指定しているということ)
     $(document).on('change', '.hidden-field', function() {
-      setLabel();
+      // setLabel();
 
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      console.log(id);
       $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
       var file = this.files[0];
       var reader = new FileReader();
@@ -53,14 +56,16 @@ $(document).on('turbolinks:load', function() {
       reader.onload = function() {
         var src = this.result;
         if ($(`#preview-box__${id}`).length == 0) {
-          var count = $('.preview-box').length;
+          // var count = $('.preview-box').length;
           var html = buildHTML(id);
+          // label^contentの前の要素を取得しているのは、追加されたものがある場合、それに追加ってこと？
           var prevContent = $('.label-content').prev();
           $(prevContent).append(html);
         }
 
         $(`#preview-box__${id} img`).attr('src', `${src}`);
         var count =$('.preview-box').length;
+
         if (count == 5) {
           $('.label-content').hide();
         }

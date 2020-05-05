@@ -10,16 +10,23 @@
           %p.message 最大5枚までアップロード出来ます
           .post__drop__box__container
             .prev-content
+              - @item.images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .delete-box
+                      .delete-btn
+                        %span 削除
             .label-content
-              %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+              %label{for: "item_images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}"}
                 %pre.label-box__text-visible クリックしてファイルをアップロード
             .hidden-content
-              = f.fields_for :images do |i|
+              =f.fields_for :images do |i|
                 = i.file_field :image, class: "hidden-field"
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+                = i.check_box :_destroy, class: "hidden-checkbox"
+              - @item.images.length.upto(4) do |i|
+                %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class: "hidden-field", type: "file"}
         .n__item__container
           %p.message 商品名（必須）
           = f.text_field :name, class: "name-box",  placeholder: "商品名（必須 40文字まで)"
@@ -53,12 +60,12 @@
               =f.number_field :selling_price, class: "item-price-title-text-b-field-text", min: "300", max: "9999999", placeholder: "0", id: "price_calc"
       .n__submit__container
         .button
-          =f.submit "出品する", class: "exhibition"
+          =f.submit "商品情報を編集する", class: "exhibition"
         .back
-          = link_to "もどる", root_path
+          = link_to "編集しないで戻る", item_path(@item.id)
       .n__attention__container
         %p.message 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .n__end__logo__container
     .n__end__logo__container__end__logo
       = link_to image_tag('logo.png', :width => '170', :height => '60'), root_path
-      %p ©️FURIMA.inc
+      %p ©️Frima.inc 
