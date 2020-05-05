@@ -102,6 +102,13 @@
           .main5__itemlist--left
             .main5__itemlist--left--pic
               = image_tag item.images[0].image.url, width: '230', height: '180'
+              %ul.more_list
+              
+                %li.more_list-b
+                  = link_to '削除', "/items/#{item.id}", method: :delete
+
+                
+
             .main5__itemlist--left--name
               = item.name
             .main5__itemlist--left--price
