@@ -88,7 +88,7 @@
             %li.item-specific-title-body-b-text-2
               任意
           .item-specific-title-body-b-field
-            = f.text_field :brnad, class: "item-specific-title-body-b-field-text", placeholder: "例) シャネル"
+            = f.text_field :brand, class: "item-specific-title-body-b-field-text", placeholder: "例) シャネル"
 
         .item-specific-title-body-c
           %ul.item-specific-title-body-c-text 
@@ -146,7 +146,7 @@
             %li.item-price-title-text-b-body-3
               ¥
           .item-price-title-text-b-field
-            =f.number_field :selling_price, class: "item-price-title-text-b-field-text", min: "300", max: "9999999", placeholder: "0", id: "price_calc"
+            = f.number_field :selling_price, class: "item-price-title-text-b-field-text", min: "300", max: "9999999", placeholder: "0", id: "price_calc"
           
     .item-profit
       .item-profit-title
@@ -164,7 +164,7 @@
 
         .item-profit-title-input
           .item-profit-title-input-1
-            =f.submit "出品", class: "item-profit-title-input-1-field"
+            = f.submit "出品", class: "item-profit-title-input-1-field"
             
           .item-profit-title-input-2
             %input.item-profit-title-input-2-field{type: "submit", value: "下書きに保存する"}
