@@ -10,7 +10,8 @@ $(document).on('turbolinks:load', ()=> {
   }
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" image="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    console.log(html)
     return html;
   }
 
@@ -25,12 +26,14 @@ $(document).on('turbolinks:load', ()=> {
     const file = e.target.files[0];
     console.log(file)
     const blobUrl = window.URL.createObjectURL(file);
+    console.log(blobUrl)
     
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('image', blobUrl);
     } else {
       $('#previews').append(buildImg(targetIndex, blobUrl));
       $('#image-box').append(buildFileField(fileIndex[0]));
+      console.log(fileIndex);
 
       $('label.item-image-title-box-input-1').attr("for", `item_images_attributes_${targetIndex}_image`)
       $('.item-image-title-box-input-1-text').text('')
