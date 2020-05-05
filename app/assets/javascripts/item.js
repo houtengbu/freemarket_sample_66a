@@ -4,7 +4,6 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${num}][image]"
                     id="item_images_attributes_${num}_image"><br>
-                    <div class="js-remove">削除</div>
                   </div>`;
     return html;
   }
@@ -16,7 +15,8 @@ $(document).on('turbolinks:load', ()=> {
   }
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px" id="test">`;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px" id="test">
+    <div class="js-remove">削除</div>`;
     console.log(html)
     return html;
   }
@@ -82,7 +82,11 @@ $(document).on('turbolinks:load', ()=> {
     })
   })
 
-
+$(".item-image-title-box-input").on("click",function() {
+  console.log("test")
+  const test = $(".js-file:last");
+  test.trigger("click");
+})
 
 });
 
