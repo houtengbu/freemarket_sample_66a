@@ -31,6 +31,11 @@ $(document).on('turbolinks:load', ()=> {
     } else {
       $('#previews').append(buildImg(targetIndex, blobUrl));
       $('#image-box').append(buildFileField(fileIndex[0]));
+
+      $('label.item-image-title-box-input-1').attr("for", `item_images_attributes_${targetIndex}_image`)
+      $('.item-image-title-box-input-1-text').text('')
+      // $('.js-remove').remove()
+      
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
