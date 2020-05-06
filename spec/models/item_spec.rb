@@ -98,52 +98,54 @@ describe Item do
   end
 
 
+# あくまでも学習のために作っているアプリなので、今後のために以下の記述はコメントアウトで残しておく。
+# 主にコントローラーのテストを参考サイトより抜粋したもの。そのため変数名など全て違うがこういう書き方をするということ。
 
-  describe 'GET #edit' do
-    let(:article) { create(:article) }
-    before { get :edit, params: { id: article.id }, session: {} }
+# describe 'GET #edit' do
+  #   let(:article) { create(:article) }
+  #   before { get :edit, params: { id: article.id }, session: {} }
   
-    it 'has a 200 status code' do
-      expect(response).to have_http_status(:ok)
-    end
+  #   it 'has a 200 status code' do
+  #     expect(response).to have_http_status(:ok)
+  #   end
   
-    it 'assigns @article' do
-      expect(assigns(:article)).to eq article
-    end
+  #   it 'assigns @article' do
+  #     expect(assigns(:article)).to eq article
+  #   end
   
-    it 'renders the :edit template' do
-      expect(response).to render_template :edit
-    end
-  end
+  #   it 'renders the :edit template' do
+  #     expect(response).to render_template :edit
+  #   end
+  # end
 
-  
 
-  describe 'PATCH #update' do
-    let!(:article) { create(:article) }
-    let(:update_attributes) do
-      {
-          title: 'update title',
-          body: 'update body'
-      }
-    end
+
+  # describe 'PATCH #update' do
+  #   let!(:article) { create(:article) }
+  #   let(:update_attributes) do
+  #     {
+  #         title: 'update title',
+  #         body: 'update body'
+  #     }
+  #   end
   
-    it 'saves updated article' do
-      expect do
-        patch :update, params: { id: article.id, article: update_attributes }, session: {}
-      end.to change(Article, :count).by(0)
-    end
+  #   it 'saves updated article' do
+  #     expect do
+  #       patch :update, params: { id: article.id, article: update_attributes }, session: {}
+  #     end.to change(Article, :count).by(0)
+  #   end
   
-    it 'updates updated article' do
-      patch :update, params: { id: article.id, article: update_attributes }, session: {}
-      article.reload
-      expect(article.title).to eq update_attributes[:title]
-      expect(article.body).to eq update_attributes[:body]
-    end
+  #   it 'updates updated article' do
+  #     patch :update, params: { id: article.id, article: update_attributes }, session: {}
+  #     article.reload
+  #     expect(article.title).to eq update_attributes[:title]
+  #     expect(article.body).to eq update_attributes[:body]
+  #   end
   
-    it 'redirects the :create template' do
-      patch :update, params: { id: article.id, article: update_attributes }, session: {}
-      article = Article.last
-      expect(response).to redirect_to(article_path(article))
-    end
-  end
+  #   it 'redirects the :create template' do
+  #     patch :update, params: { id: article.id, article: update_attributes }, session: {}
+  #     article = Article.last
+  #     expect(response).to redirect_to(article_path(article))
+  #   end
+  # end
 end
