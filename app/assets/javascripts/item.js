@@ -19,7 +19,6 @@ $(document).on('turbolinks:load', function() {
     if (window.location.href.match(/\/items\/\d+\/edit/)){
       //登録済み画像のプレビュー表示欄の要素を取得する
       var prevContent = $('.label-content').prev();
-      console.log(prevContent)
       labelWidth = (770 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
       $('.label-content').css('width', labelWidth);
       //プレビューにidを追加
@@ -48,7 +47,6 @@ $(document).on('turbolinks:load', function() {
       // setLabel();
 
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
-      console.log(id);
       $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
       var file = this.files[0];
       var reader = new FileReader();
