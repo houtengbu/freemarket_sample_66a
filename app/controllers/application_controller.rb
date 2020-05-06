@@ -16,10 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_category
-    @category_parent_array = []
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent
-      end
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
 
