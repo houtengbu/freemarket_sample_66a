@@ -1,5 +1,5 @@
 .item-detail {
-  height: 1510px;
+  height: 100hw;
   width: 100vw;
   background-color: #f8f8f8;
 }
@@ -24,15 +24,15 @@
       &__box__item-image{
         text-align: center;
         .image-main {
-          width: 600px;
+          width: 300px;
         }
       }
         &__box__item-image-sub {
           list-style: none;
           background-color: white;
           .image-sub {
-            width: 160px;
-            height: 110px;
+            width: 140px;
+            height: 140px;
           }
         }
       &__box__item-price {
@@ -53,7 +53,7 @@
         }
       }
       &__box__item-text {
-        text-align: center;
+        text-align: left;
         
       
         &-box {
@@ -92,6 +92,10 @@
         td {
           padding-left: 15px;
         }
+          .nickname {
+            text-decoration: none;
+            color: #3CCACE;
+          }
           .category {
             text-decoration: none;
             color: #3CCACE;
@@ -123,13 +127,13 @@
         .edit {
           text-decoration: none;
           color: #1DC7D3;
-          font-size: 25px;
+          font-size: 15px;
         }
         .destroy {
           text-decoration: none;
           color: #1DC7D3;
           margin-right: 20px;
-          font-size: 28px;
+          font-size: 15px;
         }
       }
       

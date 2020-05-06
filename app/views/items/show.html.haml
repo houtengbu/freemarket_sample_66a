@@ -4,11 +4,10 @@
       .item-detail__top__box__item-name 
         = @item.name
       .item-detail__top__box__item-image
-        = image_tag('cherry.png', class: 'image-main')
+        = image_tag @item.images[0].image.url, class: 'image-main', size: '300x300'
         %li.item-detail__top__box__item-image-sub
-          = image_tag('cherry.png', class: 'image-sub') 
-          = image_tag('fd401033.png', class: 'image-sub') 
-          = image_tag('fd401266.png', class: 'image-sub') 
+          - @item.images.each do |item|
+            = image_tag item.image.url, class: 'image-sub', size: '60x60'
       .item-detail__top__box__item-price 
         .item-detail__top__box__item-price-box
           ¥
@@ -24,26 +23,31 @@
             %tr
               %th 出品者
               %td
-                -# = @item.user.nickname
+                = link_to "#", class: "nickname" do
+                  = @item.saler.nickname
             %tr
               %th カテゴリー
               %td
-                -#  = link_to "#", class:"category" do
-                -#   = @category.name
+                = link_to "#", class: "category" do
+                  = @item.category.name
                 %br
-                -# = link_to "#", class:"category" do
-                  -# = @category.name
+                = link_to "#", class: "category" do
+                  = @item.category.name
                 %br
-                -# = link_to "#", class:"category" do
-                -#   = @category.name
+                = link_to "#", class: "category" do
+                  = @item.category.name
+            %tr
+              %th ブランド
+              %td
+                = @item.brand
             %tr
               %th 商品の状態
               %td
-                -# = @item.status
+                = @item.status.name
             %tr
               %th 配送料の負担
               %td
-                -# = @burden.name
+                = @item.burden.name
             %tr
               %th 発送元の地域
               %td
@@ -52,20 +56,19 @@
             %tr
               %th 発送日の目安
               %td
-                -# = @days_to_ship.name
-      -# - if user_signed_in? 
-      -#   - if current_user.id == @item.user_id 
-      -#     .item-detail__management
-      -#       = link_to "#", class:"edit" do
-      -#         = fa_icon "edit"
-      -#       = link_to "#", class:"destroy" do
-      -#         =fa_icon "trash"
-      -#   - else
-      -#     .item-detail__buy
-      -#       = link_to "購入画面に進む", buy_item_path, class:"btn", method: :get
-      -# - else 
-      -#   .item-detail__buy
-      -#     = link_to "購入画面に進む", user_session_path, class:"btn", method: :get
+                = @item.days_to_ship.name
+      - if user_signed_in? 
+        - if current_user.id == @item.saler_id 
+          .item-detail__management
+            = link_to "商品の編集", edit_item_path, class:"edit"
+            ／
+            = link_to "この商品を削除する", item_path, method: :delete, class:"destroy"
+        - else
+          .item-detail__buy
+            = link_to "購入画面に進む", "#", class:"btn"
+      - else
+        .item-detail__buy
+          = link_to "購入画面に進む", new_user_session_path, class:"btn"
       
       
       .item-detail__nav

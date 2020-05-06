@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', ()=> {
   
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" image="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
   }
   
@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', ()=> {
     const blobUrl = window.URL.createObjectURL(file);
     
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('image', blobUrl);
+      img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
       var index = $("#previews").children()["length"] + 1;
       $('#previews').append(buildImg(targetIndex, blobUrl));
