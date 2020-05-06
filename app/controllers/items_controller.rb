@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
 
   def index
+    @items = Item.all
     sold_out_item_ids = Buyer.all.pluck(:item_id)
     @item = Item.order(id: "DESC").where.not(id: sold_out_item_ids).first(3)
   end
@@ -46,6 +47,7 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def update
     if @item.update(item_params)
       redirect_to root_path
@@ -55,24 +57,26 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
-    # @product.destroy
-    # redirect_to root_path
+    item = Item.find(params[:id])
+    item.destroy
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :status_id, :burden_id, :area_id, :days_to_ship_id, :selling_price, :category_id, images_attributes: [:image, :_destroy, :id])
+    # params.require(:item).permit(:name, :text, :status_id, :burden_id, :area_id, :days_to_ship_id, :selling_price, :category_id, images_attributes: [:image, :_destroy, :id])
+    params.require(:item).permit(:name, :text, :status_id, :burden_id, :area_id, :days_to_ship_id, :selling_price, :category_id, :brand, images_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id) 
   end
 
+
+  
 
   #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   def set_item
     @item = Item.find(params[:id])
   end
   
-#商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
+  #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   # def set_category
   #   @category_parent_arrays = CategoryParentArray.all.order("id ASC").limit(13)
   # end
