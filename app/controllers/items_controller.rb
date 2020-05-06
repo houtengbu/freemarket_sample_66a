@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
 
 
   def create
-    
+    @item = Item.new
     @item = Item.create(item_params)
     if @item.save
       redirect_to items_path, notice: "出品しました"
@@ -38,10 +38,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent
-    end
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
 
