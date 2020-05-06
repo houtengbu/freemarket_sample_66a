@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   #商品削除・編集機能実装の際に、書いたものでまだ未完成の為一旦コメントアウトしています。
   # before_action :set_category, only: [:new, :create, :edit, :update]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:show, :edit, :update]
 
 
   def index
