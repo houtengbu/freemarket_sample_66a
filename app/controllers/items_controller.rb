@@ -18,41 +18,24 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     
-    #セレクトボックスの初期値設定
-    @category_parent_array = []
-    @category_children = []
-    # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent
-
+    def get_category_children
+      @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
+    end
+  
+    def get_category_grandchildren
+      @category_grandchildren = Category.find("#{params[:child_id]}").children
     end
   end
-  
-  def get_category_children
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find(params[:category_id]).children
-  end
- 
-
-  def get_category_grandchildren
-    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-  end 
 
 
   def create
-    @item = Item.new(item_params)
-    if @item.save!
-      redirect_to items_path
+    
+    @item = Item.create(item_params)
+    if @item.save
+      redirect_to items_path, notice: "出品しました"
     else
-      @category_parent_array = []
-      # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent
-
-      end
-      render :new
-    end  
+      redirect_to new_item_path, notice: "出品できません。入力必須項目を確認してください"
+    end
   end
 
   def edit
