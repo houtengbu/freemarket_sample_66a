@@ -34,13 +34,9 @@
           = f.text_area :text, class: "description-box",  cols: "60", rows: "7", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)                      例）2010年頃には一万円で購入したジャケットです。ライトグレーではありません。あわせやすいのでお勧めです。"
         .n__details__container
           %p.message 商品の詳細
-          -# %p.message サイズ（任意)
-          -# = f.text_field :size, class: "select-box",  placeholder: "（例）S, M, L"
           %p.message カテゴリー（必須)
           .sell-category-box
             = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "---"}, {class: 'sell__item-category', id: 'parent_category'}
-          -# %p.message ブランド（必須）
-          -# = f.collection_select :brand_id, Brand.all, :id, :name, {}, {class: "select-box"}
           %p.message 商品の状態（必須）
           = f.collection_select :status_id, Status.all, :id, :name, {}, {class: "select-box"}
         .n__post__container
