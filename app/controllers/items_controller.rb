@@ -28,8 +28,7 @@ class ItemsController < ApplicationController
 
 
   def create
-    @item = Item.new
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
     if @item.save
       redirect_to items_path, notice: "出品しました"
     else
