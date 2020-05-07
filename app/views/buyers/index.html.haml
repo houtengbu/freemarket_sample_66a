@@ -53,6 +53,9 @@
             東京都渋谷区1-11−111
             %br
             山田太郎
+            -# = fa_icon "plus-circle", class: "buy-main__bottom-form-address-box--icon"
+            -# = link_to "登録して下さい","#", class:"buy-main__bottom-form-address-box--entry"
+
         .buy-main__bottom-form-confirm
           = form_tag(action: :pay, method: :post) do
             %button.buy-main__bottom-form-confirm-btm{type:"submit"} 購入する
