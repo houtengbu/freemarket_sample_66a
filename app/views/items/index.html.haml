@@ -1,9 +1,10 @@
 .wrapper
-  .sellbtn
-    %span
-      .sellbtn__text
-        出品する
-      = image_tag "icon_camera.png",size: '70x70'
+  = link_to  new_item_path, class: 'submit-btn-link' do
+    .sellbtn
+      %span
+        .sellbtn__text
+          出品する
+        = image_tag '/icon_camera.png', size: '70x70'
   = render partial: 'items/main-header'
   .main1
     .main1__page
@@ -14,16 +15,16 @@
         %p フリマアプリです
       .main1__btn
         .main1__btn--apple
-          = image_tag "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",size: '180x53'
+          = image_tag '/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg',size: '180x53'
         .main1__btn--google
-          = image_tag "google-play-badge.png",size: '200x73'
+          = image_tag '/google-play-badge.png',size: '200x73'
   .main2
     .main2__page
       .main2__heading
         %h2 FURIMAが選ばれる3つの理由
       %ul.main2__title
         %li.main2__title__left
-          = image_tag "pict-reason-01.jpg",size: '280x280'
+          = image_tag '/pict-reason-01.jpg',size: '280x280'
           %span 
             .main2__title__left--num
               1
@@ -34,7 +35,7 @@
             .main2__title__left--text--sub
               %P スマホで入力するだけで簡単に出品できる！
         %li.main2__title__center
-          = image_tag "pict-reason-02.jpg",size: '280x280'
+          = image_tag '/pict-reason-02.jpg',size: '280x280'
           %span
             .main2__title__center--num
               2
@@ -45,7 +46,7 @@
             .main2__title__center--text--sub
               %p めんどくさい入力は必要なく、検索に購入もスムーズ！
         %li.main2__title__right
-          = image_tag "pict-reason-03.jpg",size: '280x280'
+          = image_tag '/pict-reason-03.jpg',size: '280x280'
           %span
             .main2__title__right--num
               3
@@ -65,28 +66,28 @@
         %p ほしかったあの商品に出会えるかもしれません。
       .main3__btn
         .main3__btn--apple
-          = image_tag "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",size: '180x53'
+          = image_tag '/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg',size: '180x53'
         .main3__btn--google
-          = image_tag "google-play-badge.png",size: '200x73'
+          = image_tag '/google-play-badge.png',size: '200x73'
   .main4
     .main4__page
       .main4__heading
         %h2 FURIMAの特徴
       .main4__title
         .main4__title__left
-          = image_tag "icon-01.png",size: '154x237'
+          = image_tag '/icon-01.png',size: '154x237'
           .main4__title__left--text
             %h3 簡単に売り買いできる
           .main4__title__left--sub
             %P スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         .main4__title__center
-          = image_tag "icon-03.png",size: '154x237'
+          = image_tag '/icon-03.png',size: '154x237'
           .main4__title__center--text
             %h3 売上金は即日振込みに対応
             .main4__title__center--text--sub
               %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
         .main4__title__right
-          = image_tag "icon-04.png",size: '154x237'
+          = image_tag '/icon-04.png',size: '154x237'
           .main4__title__right--text
             %h3 様々な支払いに対応
             .main4__title__right--text--sub
@@ -101,21 +102,15 @@
         - @item.each do |item|
           .main5__itemlist--left
             .main5__itemlist--left--pic
+            = link_to edit_item_path(@item), class:"Edit" do
               = image_tag item.images[0].image.url, width: '230', height: '180'
-              %ul.more_list
-              
-                %li.more_list-b
-                  = link_to '削除', "/items/#{item.id}", method: :delete
-
-                
-
-            .main5__itemlist--left--name
-              = item.name
-            .main5__itemlist--left--price
-              = item.selling_price
-              円
-            .main5__itemlist--left--text
-              (税込)
+              .main5__itemlist--left--name
+                = item.name
+              .main5__itemlist--left--price
+                = item.selling_price
+                円
+              .main5__itemlist--left--text
+                (税込)
   .main6
     .main6__page
       .main6__title
@@ -124,9 +119,9 @@
         %p 今すぐ無料ダウンロード！
       .main6__btn
         .main6__btn--apple
-          = image_tag "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",size: '180x53'
+          = image_tag '/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg',size: '180x53'
         .main6__btn--google
-          = image_tag "google-play-badge.png",size: '200x73'
+          = image_tag '/google-play-badge.png',size: '200x73'
 
     .footer
 

@@ -8,6 +8,16 @@
 
 
 
+# 今は使わないので一旦、コメントアウト
+# 10.times do
+#   User.create(
+#      nickname: Faker::DragonBall.character,
+#      password: Faker::Internet.password,
+#      email: Faker::Internet.email
+#    )
+# end
+
+
 # レディース
 lady = Category.create(name: "レディース")
 lady_1 = lady.children.create(name: "トップス")
