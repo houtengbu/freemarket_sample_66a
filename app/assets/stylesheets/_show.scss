@@ -24,7 +24,7 @@
       &__box__item-image{
         text-align: center;
         .image-main {
-          width: 300px;
+          width: 400px;
         }
       }
         &__box__item-image-sub {
@@ -111,16 +111,18 @@
         height: 45px;
         border: solid;
         margin-left: 130px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        padding-top: 8px;
         background-color: #1DC7D3;
         border-color: #1DC7D3;
-
+        text-decoration: none;
         .btn {
           text-decoration: none;
-          font-size: 25px;
+          font-size: 20px;
+          align-items: center;
           color: white;
           font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-        }
+        }  
       }
       .item-detail__management {
         text-align: right;

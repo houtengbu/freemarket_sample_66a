@@ -4,7 +4,7 @@
       .item-detail__top__box__item-name 
         = @item.name
       .item-detail__top__box__item-image
-        = image_tag @item.images[0].image.url, class: 'image-main', size: '300x300'
+        = image_tag @item.images[0].image.url, class: 'image-main', size: '400x400'
         %li.item-detail__top__box__item-image-sub
           - @item.images.each do |item|
             = image_tag item.image.url, class: 'image-sub', size: '60x60'
@@ -57,7 +57,7 @@
               %th 発送日の目安
               %td
                 = @item.days_to_ship.name
-      - if user_signed_in? 
+      -if user_signed_in?
         - if current_user.id == @item.saler_id 
           .item-detail__management
             = link_to "商品の編集", edit_item_path, class:"edit"
@@ -65,10 +65,10 @@
             = link_to "この商品を削除する", item_path, method: :delete, class:"destroy"
         - else
           .item-detail__buy
-            = link_to "購入画面に進む", "#", class:"btn"
+            =link_to "商品購入画面に進む", buyer_index_path(@item.buyer_id), class: "btn"
       - else
         .item-detail__buy
-          = link_to "購入画面に進む", new_user_session_path, class:"btn"
+          = link_to "ログインして購入画面に進む", new_user_session_path, class: "btn"
       
       
       .item-detail__nav
