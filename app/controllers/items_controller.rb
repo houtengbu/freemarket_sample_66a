@@ -34,7 +34,8 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to items_path, notice: "出品しました"
     else
-      redirect_to new_item_path, notice: "出品できません。入力必須項目を確認してください"
+      flash.now[:alert] = "出品できません。入力必須項目を確認してください"
+      render :new
     end
   end
 
@@ -45,8 +46,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to root_path notice: "編集しました"
     else
+      flash.now[:alert] = "編集できません。入力必須項目を確認してください"
       render :edit
     end
   end
