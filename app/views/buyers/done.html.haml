@@ -1,4 +1,11 @@
-%h1.purchased
-  購入が完了しました
-%p1.purchased__submit
-  = link_to "トップページへ戻る", root_path, class: 'purchased__submit--button'
+.done
+
+  .done-inline
+
+    .done-inlline__title
+      購入が完了しました
+
+    .done-title-inline__content
+      %form.done-title-inline__content-form
+        .done-title-inline__content-form-submit
+          = link_to "トップページへ戻る", root_path, class: 'done-title-inline__content-form-submit--button'
