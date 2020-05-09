@@ -12,6 +12,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @grandchild_category = Category.find(@item[:category_id])
+    @child_category = @grandchild_category.parent
+    @parent_category = @child_category.parent
   end
 
   def new

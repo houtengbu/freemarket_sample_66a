@@ -12,6 +12,9 @@
       .item-detail__top__box__item-price 
         .item-detail__top__box__item-price-box
           ¥3000
+          = @parent_category.name
+          = @child_category.name
+          = @item.category.name
         .item-detail__top__box__item-price-detail
           (税込) 送料込み
       .item-detail__top__box__item-text
