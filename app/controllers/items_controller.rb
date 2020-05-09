@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path, notice: "出品しました"
+      redirect_to root_path, notice: "出品しました"
     else
       flash.now[:alert] = "出品できません。入力必須項目を確認してください"
       render :new
@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path notice: "編集しました"
+      redirect_to item_path(@item.id), notice: "編集しました"
     else
       flash.now[:alert] = "編集できません。入力必須項目を確認してください"
       render :edit
