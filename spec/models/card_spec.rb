@@ -27,7 +27,7 @@ describe Card do
     it "card_idがない場合は登録できないこと" do
       card = build(:card, card_id: nil)
       card.valid?
-      expect(item.errors[:card_id]).to include("can't be blank")
+      expect(card.errors[:card_id]).to include("can't be blank")
     end
     
   end
