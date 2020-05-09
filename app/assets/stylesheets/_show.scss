@@ -53,11 +53,8 @@
         }
       }
       &__box__item-text {
-        text-align: left;
-        
-      
         &-box {
-          text-align: center;
+          text-align: left;
           font-size: 18px;
           margin: 40px;
           font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
@@ -158,21 +155,28 @@
           list-style: none;
           background-color: #f8f8f8;
         }
-        .item-detail__more-navi {
+        
+
+      .item-detail__more {
+        &-navi {
           background-color: #f8f8f8;
           font-size: 23px;
           font-weight: bold;
           padding: 25px 0;
-          
           a {
             text-decoration: none;
             color: #1DC7D3;
           }
         }
-  
+      }
+        
+      
+
+        
+      
 .link {
   height: 400px;
-  background-image: url(bg-appBanner-pict.png);
+  background-image: url(/bg-appBanner-pict.png);
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -197,21 +201,26 @@
       text-align: center;
     }
   }
-    .link-icon {
-      text-align: center;
-      a {
-        text-decoration: none;
-      }
-      .icon{
-        height: 60px;
-        width: 210px;
-        margin-top: 20px;
-      }
-      img:hover {
-        opacity: 0.5;
-      }
+  .link-icon {
+    
+    a {
+      text-decoration: none;
     }
-
-
+    .icon {
+      width: 260px;
+      height: 60px;
+      padding-top: 40px;
+      padding-bottom: 9px;
+    }
+    .icon-goo {
+      padding-top: 40px;
+      height: 83px;
+      width: 205px;
+    }
+    img:hover {
+      opacity: 0.5;
+    }
+  }
+    
 
 
