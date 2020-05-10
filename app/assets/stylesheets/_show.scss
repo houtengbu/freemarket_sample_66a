@@ -140,41 +140,89 @@
 
       .item-detail__nav {
         padding-top: 5px;
-        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f8f8f8;
       }
-        .nav {
-          text-decoration: none;
-          color: #1DC7D3;
-        }
-        .nav-next {
-          text-decoration: none;
-          color: #1DC7D3;
-          float: right;
-        }
-        li {
-          list-style: none;
-          background-color: #f8f8f8;
-        }
-        
-
-      .item-detail__more {
-        &-navi {
-          background-color: #f8f8f8;
-          font-size: 23px;
-          font-weight: bold;
-          padding: 25px 0;
-          a {
-            text-decoration: none;
+        .item-detail__nav-prev {
+          .nav {
             color: #1DC7D3;
           }
+          .nav:hover{
+            text-decoration: underline;
+            color: powderblue;
+          }
+        }
+      
+        .item-detail__nav-next {
+          .nav-next {
+            text-decoration: none;
+            color: #1DC7D3;
+          } 
+          .nav-next:hover{
+            text-decoration: underline;
+            color: powderblue;
+          }
+        }
+
+      .more-nav {
+        background-color: #f8f8f8;
+        color: #1DC7D3;
+        font-size: 23px;
+        font-weight: bold;
+        padding: 25px 0;
+        .more {
+          color: #1DC7D3;
         }
       }
         
-      
-
+      .more-list {
+        display: flex;
+        background-color: #f8f8f8;
+        height: 100hw;
+      }
+        .more-list__box {
+          &__item {
+            float: left;
+            text-align: center;
+            height: 320px;
+            width: 220px;
+            margin: 12px;
+            background-color: white;
+            &__text {
+              height: 100px;
+              text-align: left;
+              background-color: white;
+              
+              &-name {
+                margin-left: 15px;
+                margin-top: 10px;
+                text-decoration: none;
+                font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+                a:hover {
+                  text-decoration: underline;
+                  color: dimgray;
+                }
+              }
+                
+              &-price {
+                padding: 15px 5px;
+                margin-left: 10px;
+                font-size: 17px;
+                font-weight: bold;
+                font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+                a:hover {
+                  text-decoration: underline;
+                  color: dimgray;
+                }
+              }
+            }
+          }
+        }
         
-      
+
 .link {
+  clear: both;
   height: 400px;
   background-image: url(/bg-appBanner-pict.png);
   background-size: cover;

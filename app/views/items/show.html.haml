@@ -69,14 +69,31 @@
       - else
         .item-detail__buy
           = link_to "ログインして購入画面に進む", new_user_session_path, class: "btn"
-      
+        
       .item-detail__nav
-      %li
-        = link_to "< 前の商品", item_path(@prev_item), class:"nav"
-        = link_to "後ろの商品 >", item_path(@next_item),class:"nav-next"
-        .item-detail__more-navi
-          = link_to "#{@item.saler.nickname}さんのその他の出品", "/"
-
+        - if @prev_item.present?
+          .item-detail__nav-prev
+            = link_to "< 前の商品", item_path(@prev_item), class:"nav"
+        - if @next_item.present?
+          .item-detail__nav-next
+            = link_to "後ろの商品 >", item_path(@next_item),class:"nav-next"
+            
+      .more-nav
+        = link_to "#{@item.saler.nickname}さんのその他の出品", "/", class:"more"
+      .more-list
+        .more-list__box
+          - @my_item.order('created_at DESC').limit(6).each do |my_item|
+            .more-list__box__item
+              = link_to item_path(my_item) do
+                = image_tag my_item.images[0].image.url, class: "image", size: '223x200'
+                .more-list__box__item__text
+                  .more-list__box__item__text-name
+                    = link_to item_path(my_item) do
+                      = my_item.name
+                  .more-list__box__item__text-price
+                    = link_to item_path(my_item) do
+                      ¥   
+                      = my_item.selling_price 
 .link
   %link{href: "_show.scss", rel: "stylesheet", type: "scss"}
     .link-text
