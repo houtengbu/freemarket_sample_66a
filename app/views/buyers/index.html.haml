@@ -8,7 +8,6 @@
       購入内容の確認
 
     .buy-main__middle
-      -# = image_tag(src= "#{@item.images.image[0].url}"), class: "buy-main__middle-image"
       = image_tag @item.images[0].image.url
       .buy-main__middle-item
         .buy-main__middle-item-name
@@ -53,7 +52,7 @@
             東京都渋谷区1-11−111
             %br
             山田太郎
-            -# = fa_icon "plus-circle", class: "buy-main__bottom-form-address-box--icon"
+            -# = fa_icon "plus-circle", class: "buy-main__bottom-form-address-box--icon" 今後、アドレスのインスタンスを使用する際に使用する可能性がある。
             -# = link_to "登録して下さい","#", class:"buy-main__bottom-form-address-box--entry"
 
         .buy-main__bottom-form-confirm
