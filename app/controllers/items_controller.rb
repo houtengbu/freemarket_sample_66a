@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:edit]
   before_action :set_item, only: [:show, :edit, :update]
+  before_action :move_to_root, except: [:index, :show, :top]
+  before_action :correct_user, only: [:edit, :update]
 
 
   def index
@@ -33,9 +35,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path, notice: "出品しました"
+      redirect_to root_path, notice: "出品しました"
     else
-      redirect_to new_item_path, notice: "出品できません。入力必須項目を確認してください"
+      flash.now[:alert] = "出品できません。入力必須項目を確認してください"
+      render :new
     end
   end
 
@@ -46,8 +49,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to item_path(@item.id), notice: "編集しました"
     else
+      flash.now[:alert] = "編集できません。入力必須項目を確認してください"
       render :edit
     end
   end
@@ -67,4 +71,15 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def move_to_root
+    redirect_to root_path unless user_signed_in?
+  end
+
+  def correct_user
+    if @current_user.id !=  @item.saler_id
+     redirect_to root_path
+    end
+  end
+
 end

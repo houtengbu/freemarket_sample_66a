@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-  resources :users
+  resources :users, only: [:show, :edit]
+  resources :addresses, only: [:new, :create]
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'

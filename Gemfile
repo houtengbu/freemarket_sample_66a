@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'faker', "~> 2.8"
 end
 
 group :development do
@@ -87,4 +88,3 @@ gem 'mini_magick'
 gem 'merge_db_schema'
 gem 'active_hash'
 gem 'payjp'
-gem 'faker', "~> 2.8"
