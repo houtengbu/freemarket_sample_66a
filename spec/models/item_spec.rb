@@ -86,7 +86,7 @@ describe Item do
     it "selling_priceが300以下では登録できない " do
       item = build(:item, selling_price: "200")
       item.valid?
-      expect(item.errors[:selling_price]).to include("must be greater than 300")
+      expect(item.errors[:selling_price]).to include("must be greater than 299")
     end
     # 15
     it "saler_idが空では登録できない " do
