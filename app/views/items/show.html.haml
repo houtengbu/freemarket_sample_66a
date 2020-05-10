@@ -65,7 +65,7 @@
             = link_to "この商品を削除する", item_path, method: :delete, class:"destroy"
         - else
           .item-detail__buy
-            =link_to "商品購入画面に進む", "/", class: "btn"
+            =link_to "商品購入画面に進む", buyers_path(@item.id), class: "btn"
       - else
         .item-detail__buy
           = link_to "ログインして購入画面に進む", new_user_session_path, class: "btn"
@@ -85,7 +85,7 @@
           - @my_item.order('created_at DESC').limit(6).each do |my_item|
             .more-list__box__item
               = link_to item_path(my_item) do
-                = image_tag my_item.images[0].image.url, class: "image", size: '223x200'
+                = image_tag my_item.images[0].image.url, class: "image", size: '221x200'
                 .more-list__box__item__text
                   .more-list__box__item__text-name
                     = link_to item_path(my_item) do

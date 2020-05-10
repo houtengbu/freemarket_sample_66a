@@ -139,7 +139,7 @@
 
 
       .item-detail__nav {
-        padding-top: 5px;
+        padding-top: 13px;
         display: flex;
         justify-content: space-between;
         background-color: #f8f8f8;
@@ -170,7 +170,7 @@
         color: #1DC7D3;
         font-size: 23px;
         font-weight: bold;
-        padding: 25px 0;
+        padding-top: 15px;
         .more {
           color: #1DC7D3;
         }
@@ -182,12 +182,13 @@
         height: 100hw;
       }
         .more-list__box {
+          
           &__item {
             float: left;
             text-align: center;
             height: 320px;
-            width: 220px;
-            margin: 12px;
+            width: 223px;
+            margin: 13px;
             background-color: white;
             &__text {
               height: 100px;
