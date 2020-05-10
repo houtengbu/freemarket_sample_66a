@@ -82,28 +82,3 @@
     }
   }
 }
-
-
-.exhibit {
-  a{
-    width: 160px;
-    height: 160px;
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    font-size: 22px;
-    border-radius: 50%;
-    background: #ea352d;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    .text{
-      margin: 32px 0 0;
-      padding: 0;
-    }
-    i{
-      margin: 8px 0 0;
-      font-size: 54px;
-    }
-  }
-}
