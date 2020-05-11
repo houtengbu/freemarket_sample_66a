@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_root, except: [:index, :show, :top]
   before_action :correct_user, only: [:edit, :update]
+  before_action :user_address, only: [:new]
 
 
   def index
@@ -73,7 +74,11 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root
-    redirect_to root_path unless user_signed_in?
+    if user_signed_in?
+    else
+      flash[:alert] = "出品するためにはユーザー登録が必要です"
+      redirect_to root_path
+    end
   end
 
   def correct_user
@@ -81,5 +86,13 @@ class ItemsController < ApplicationController
      redirect_to root_path
     end
   end
+
+  def user_address
+    unless @current_user.address.blank?
+    else
+      redirect_to root_path, alert:"出品するためには本人情報の登録が必要です"
+    end
+  end
+
 
 end
