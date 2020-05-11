@@ -12,13 +12,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @grandchild_category = Category.find(@item[:category_id])
-    @child_category = @grandchild_category.parent
-    @parent_category = @child_category.parent
+    @item = Item.find(params[:id])
+    @next_item = Item.where("id > ?", @item.id).order("id ASC").first
+    @prev_item = Item.where("id < ?", @item.id).order("id DESC").first
+    @my_item = Item.where(saler_id: @item.saler_id)
   end
 
   def new
-    
     @item = Item.new
     @item.images.new
     
@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
     item.destroy
   end
 
+  
   private
 
   def item_params
