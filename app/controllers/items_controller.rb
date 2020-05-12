@@ -88,10 +88,7 @@ class ItemsController < ApplicationController
   end
 
   def user_address
-    unless @current_user.address.blank?
-    else
-      redirect_to root_path, alert:"出品するためには本人情報の登録が必要です"
-    end
+    redirect_to root_path, alert:"出品するためには本人情報の登録が必要です" if @current_user.address.blank?
   end
 
 
