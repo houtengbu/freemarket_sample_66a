@@ -8,7 +8,8 @@
       購入内容の確認
 
     .buy-main__middle
-      = image_tag @item.images[0].image.url
+      .buy-main__middle-image
+        = image_tag @item.images[0].image.url
       .buy-main__middle-item
         .buy-main__middle-item-name
           = @item.name
@@ -44,16 +45,27 @@
               = "有効期限：" + exp_month + " / " + exp_year
             %br
         .buy-main__bottom-form-address
+
           .buy-main__bottom-form-address-info
-            配送先
+            .buy-main__bottom-form-address-info-left
+              配送先
+            .buy-main__bottom-form-address-info-right
+              -# = link_to "変更する",new_address_path, class:"buy-main__bottom-form-address-info-right--update" 
+              -# マイページで変更できるようになれば作成する。
+
           .buy-main__bottom-form-address-box
-            〒111-1111
-            %br
-            東京都渋谷区1-11−111
-            %br
-            山田太郎
-            -# = fa_icon "plus-circle", class: "buy-main__bottom-form-address-box--icon" 今後、アドレスのインスタンスを使用する際に使用する可能性がある。
-            -# = link_to "登録して下さい","#", class:"buy-main__bottom-form-address-box--entry"
+            - if @address.blank? 
+              = fa_icon "plus-circle", class: "buy-main__bottom-form-address-box--icon" 
+              = link_to "登録して下さい", new_address_path, class:"buy-main__bottom-form-address-box--entry"
+              %br
+            - else
+              = "〒#{@address.postal_code.to_s}"
+              %br
+              = @address.prefecture
+              %br
+              = @address.city
+              %br
+              = @address.block
 
         .buy-main__bottom-form-confirm
           = form_tag(action: :pay, method: :post) do

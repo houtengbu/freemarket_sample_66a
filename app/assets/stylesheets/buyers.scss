@@ -126,6 +126,7 @@
 
             a {
               text-decoration: none;
+              color: #0099E8;
               }
 
 
@@ -154,12 +155,29 @@
 
         &-address {
           width: 343px;
-          padding: 40px 0 40px 0;
+          padding: 20px 0 80px 0;
           border-bottom: 1px solid #f5f5f5;
 
           &-info {
-            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
             font-weight: bold;
+
+            &-left {
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            &-right {
+              font-size: 14px;
+              font-weight: bold;
+              text-align: right;
+            }
+
+            a {
+              text-decoration: none;
+              color: #0099E8;
+              }
           }
 
           &-box {
@@ -187,7 +205,7 @@
         
         &-confirm {
           width: 343px;
-          padding-top: 25px;
+          padding-top: 15px;
 
           &-btm {
             width: 100%;
