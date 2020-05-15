@@ -62,6 +62,11 @@ class ItemsController < ApplicationController
     item.destroy
   end
 
+  def search
+    @items = Item.search(params[:search])
+  end
+
+
   
   private
 

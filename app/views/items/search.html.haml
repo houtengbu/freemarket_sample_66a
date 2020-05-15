@@ -1,0 +1,19 @@
+.wrapper
+  = render partial: 'items/item-btn'
+  = render partial: 'items/main-header'
+
+  .item
+    - @items.each do |item|
+      .item-list
+        .item-list-box
+        = link_to item_path(item.id), class:"search-show" do
+          .item-list-box-pic
+            = image_tag item.images[0].image.url, width: '100', height:'100'
+          .item-list-box-name
+            = item.name
+          .item-list-box-text
+            = item.text
+          .item-list-box-price
+            ¥
+            = item.selling_price
+            （税込）

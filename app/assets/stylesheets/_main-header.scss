@@ -26,8 +26,8 @@
       a {
         color: black;
       }
-      input {
-        width: 100%;
+      #search {
+        width: 90%;
         height: 36px;
         padding: 9px 32px 9px 8px;
         background: #fafafa;
@@ -35,10 +35,10 @@
         box-sizing: border-box;
         border: 1px solid #ccc;
       }
-      i {
+      #sbtn {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 5px;
+        right: 10px;
         width: 36px;
         line-height: 36px;
         cursor: pointer;
