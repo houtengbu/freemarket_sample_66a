@@ -8,8 +8,8 @@
         = form_with url: search_items_path, method: :get, local: true do |f|
           .form-group
             = f.text_field :search, class: 'form-control'
-          %i.fa.fa-search
-            = f.submit '検索する', class: 'btn btn-primary',id: 'sbtn', name: nil
+          = button_tag type: 'submit', class: 'btn-primary' do
+            = image_tag '/icon-search 1.png', alt: '', height: '36', width: '36', class: 'searchtest', id:'sbtn'
     %ul.lists.clearfix
       %li.lists__left.left-float
         .categories
