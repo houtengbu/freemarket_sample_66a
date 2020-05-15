@@ -2,18 +2,23 @@
   = render partial: 'items/item-btn'
   = render partial: 'items/main-header'
 
-  .item
+  .search
     - @items.each do |item|
-      .item-list
-        .item-list-box
-        = link_to item_path(item.id), class:"search-show" do
-          .item-list-box-pic
-            = image_tag item.images[0].image.url, width: '100', height:'100'
-          .item-list-box-name
-            = item.name
-          .item-list-box-text
-            = item.text
-          .item-list-box-price
-            ¥
-            = item.selling_price
-            （税込）
+      .search-list
+        %ul.search-list-box
+          %li.search-list-box-left
+            = link_to item_path(item.id), class:"search-show" do
+              .search-list-box-left-pic
+                = image_tag item.images[0].image.url, width: '100', height:'100'
+              .search-list-box-left-price
+                ¥
+                = item.selling_price
+                （税込）
+          %li.search-list-box-right
+            = link_to item_path(item.id), class:"search-show" do
+              .search-list-box-right-name
+                商品名：
+                = item.name
+              .search-list-box-right-text
+                商品説明：
+                = item.text
