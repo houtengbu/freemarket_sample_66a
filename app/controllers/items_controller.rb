@@ -66,6 +66,10 @@ class ItemsController < ApplicationController
     @items = Item.search(params[:search])
   end
 
+  # def lady
+  #   @item = Item.where(category_id: )
+  # end
+
 
   
   private
