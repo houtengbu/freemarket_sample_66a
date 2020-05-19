@@ -39,7 +39,7 @@ Pass：6666
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|bigint|null: false,foreign_key:true|
+|user_id|bigint|null: false|
 |customer_id|string|null: false|
 |card_id|string|null: false|
 ### Association
@@ -48,7 +48,7 @@ Pass：6666
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|bigint|null: false,foreign_key:true|
+|user_id|bigint|null: false|
 |familyname|string|null: false|
 |firstname|string|null: false|
 |familyname_kana|string|null: false|
@@ -72,8 +72,8 @@ Pass：6666
 ## buyersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|bigint|null: false,foreign_key:true|
-|items_id|bigint|null: false,foreign_key:true|
+|user_id|bigint|null: false|
+|items_id|bigint|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :item
@@ -89,9 +89,9 @@ Pass：6666
 |area_id|string|null: false|
 |days_to_ship_id|integer|null: false|
 |selling_price|integer|null: false|
-|category_id|bigint|null: false,foreign_key:true|
-|buyer_id|bigint|
-|saler_id|bigint|
+|category_id|bigint|null: false|
+|buyer_id|bigint|foreign_key:true|
+|saler_id|bigint|foreign_key:true|
 |brand|string||
 ### Association
 - has_many :images
@@ -105,7 +105,7 @@ Pass：6666
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|bigint|null: false,foreign_key:true|
+|item_id|bigint|null: false|
 |image|string|null: false|
 ### Association
 - belongs_to :item
