@@ -32,7 +32,7 @@ Pass：6666
 ### Association
 - has_many :items
 - has_many :buyers
-- has_one :credit_card
+- has_one :card
 - has_one :address
 
 
@@ -62,10 +62,10 @@ Pass：6666
 |block|integer|null:false|
 |building|string|
 |phone_number|string|
-|familyname_deliver|string|
-|firstname_deliver|string|
-|familyname_kana_deliver|string|
-|firstname_kana_deliver|string|
+|familyname_deliver|string|null:false|
+|firstname_deliver|string|null:false|
+|familyname_kana_deliver|string|null:false|
+|firstname_kana_deliver|string|null:false|
 ### Association
 - belongs_to :user
 
