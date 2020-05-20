@@ -1,10 +1,10 @@
 ## ■ URL
-IPアドレス：http://18.181.23.135/
-Github（最終課題のリポジトリ）：https://github.com/Masa6190/freemarket_sample_66a
+- IPアドレス：http://18.181.23.135/
+- Github（最終課題のリポジトリ）：https://github.com/Masa6190/freemarket_sample_66a
 
 ### ■ Basic認証
-ID：team66-a
-Pass：6666
+- ID：team66-a
+- Pass：6666
 
 ### ■ テスト用アカウント
 ◯ 購入者用
